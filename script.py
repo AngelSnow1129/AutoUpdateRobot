@@ -12,10 +12,10 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 
 # -------------------- 配置 --------------------
 RESP_FILE = 'resp.txt'       # 存放API返回的原始数据
-URL_FILE = 'url2.txt'        # 存放去重后的URL列表
-DOWNLOAD_FOLDER = 'download3'
-SOURCE_DIRECTORY = r"download3"  # 分类的源目录（这里用下载目录）
-DESTINATION_DIRECTORY = r"download3"  # 分类的目标目录（同目录则就地整理）
+URL_FILE = 'url.txt'        # 存放去重后的URL列表
+DOWNLOAD_FOLDER = 'download'
+SOURCE_DIRECTORY = r"download"  # 分类的源目录（这里用下载目录）
+DESTINATION_DIRECTORY = r"download"  # 分类的目标目录（同目录则就地整理）
 
 HEADERS = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.131 Safari/537.36"

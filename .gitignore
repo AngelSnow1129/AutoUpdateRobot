@@ -1,4 +1,4 @@
 # 忽略下载目录、日志、压缩包
-download3/
+download/
 *.log
 *.zip

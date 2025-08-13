@@ -31,26 +31,26 @@ jobs:
       - name: Run crawler script
         run: |
           python script.py
-          mkdir -p download3
+          mkdir -p download
 
-      - name: Commit url2.txt if changed
+      - name: Commit url.txt if changed
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add url2.txt
+          git add url.txt
           if ! git diff --cached --quiet; then
-            git commit -m "chore: auto update url2.txt [skip ci]"
+            git commit -m "chore: auto update url.txt [skip ci]"
             git push
           else
-            echo "No changes to url2.txt."
+            echo "No changes to url.txt."
           fi
 
       - name: Prepare release files
         run: |
           TAG="v$(date -u +'%Y%m%d-%H%M%S')"
           NAME="Auto Release $(date -u +'%Y-%m-%d %H:%M:%S') UTC"
-          ZIP="download3-${TAG}.zip"
-          7z a -tzip "$ZIP" download3 >/dev/null || true
+          ZIP="download-${TAG}.zip"
+          7z a -tzip "$ZIP" download >/dev/null || true
           echo "TAG=$TAG"  >> $GITHUB_ENV
           echo "NAME=$NAME" >> $GITHUB_ENV
           echo "ZIP=$ZIP" >> $GITHUB_ENV
@@ -58,7 +58,7 @@ jobs:
             echo "### 自动发布"
             echo ""
             echo "- 时间：$(date -u +'%Y-%m-%d %H:%M:%S') UTC"
-            echo "- URL 列表：\`url2.txt\`"
+            echo "- URL 列表：\`url.txt\`"
             echo "- 下载包：\`${ZIP}\`"
           } > RELEASE_NOTES.md
 
@@ -70,7 +70,7 @@ jobs:
           body_path: RELEASE_NOTES.md
           files: |
             ${{ env.ZIP }}
-            url2.txt
+            url.txt
             download_log.log
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
