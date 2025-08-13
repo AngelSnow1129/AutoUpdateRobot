@@ -1,0 +1,76 @@
+name: Scheduled Crawl & Release
+
+on:
+  schedule:
+    - cron: "30 3 * * *"   # 每天 UTC 03:30 运行
+  workflow_dispatch: {}     # 支持手动触发
+
+permissions:
+  contents: write
+
+jobs:
+  run-and-release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run crawler script
+        run: |
+          python script.py
+          mkdir -p download3
+
+      - name: Commit url2.txt if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add url2.txt
+          if ! git diff --cached --quiet; then
+            git commit -m "chore: auto update url2.txt [skip ci]"
+            git push
+          else
+            echo "No changes to url2.txt."
+          fi
+
+      - name: Prepare release files
+        run: |
+          TAG="v$(date -u +'%Y%m%d-%H%M%S')"
+          NAME="Auto Release $(date -u +'%Y-%m-%d %H:%M:%S') UTC"
+          ZIP="download3-${TAG}.zip"
+          7z a -tzip "$ZIP" download3 >/dev/null || true
+          echo "TAG=$TAG"  >> $GITHUB_ENV
+          echo "NAME=$NAME" >> $GITHUB_ENV
+          echo "ZIP=$ZIP" >> $GITHUB_ENV
+          {
+            echo "### 自动发布"
+            echo ""
+            echo "- 时间：$(date -u +'%Y-%m-%d %H:%M:%S') UTC"
+            echo "- URL 列表：\`url2.txt\`"
+            echo "- 下载包：\`${ZIP}\`"
+          } > RELEASE_NOTES.md
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ env.TAG }}
+          name: ${{ env.NAME }}
+          body_path: RELEASE_NOTES.md
+          files: |
+            ${{ env.ZIP }}
+            url2.txt
+            download_log.log
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
