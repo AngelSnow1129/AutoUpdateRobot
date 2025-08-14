@@ -2,3 +2,6 @@
 download/
 *.log
 *.zip
+url.txt
+*urls.txt
+downloads_final/

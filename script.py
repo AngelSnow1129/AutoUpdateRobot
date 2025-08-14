@@ -1,195 +1,258 @@
-# -*- coding: utf-8 -*-
-import json
+import requests
+from bs4 import BeautifulSoup
 import os
-import re
-import shutil
 import time
 import random
-import requests
+import json
 import logging
-from bs4 import BeautifulSoup
+import shutil
+import re
+import sys
 from concurrent.futures import ThreadPoolExecutor, as_completed
+from tqdm import tqdm
 
-# -------------------- 配置 --------------------
-RESP_FILE = 'resp.txt'           # 存放API返回的原始数据
-URL_FILE = 'url.txt'             # 存放去重后的URL列表
-WEB_SOURCE_URL = "http://www.hunanie.com/col.jsp?id=123"  # 网页抓取 URL
-DOWNLOAD_FOLDER = 'download'
-SOURCE_DIRECTORY = DOWNLOAD_FOLDER
-DESTINATION_DIRECTORY = DOWNLOAD_FOLDER
+# ==============================================================================
+# --- 日志配置 ---
+# ==============================================================================
+# 确保日志文件和脚本在同一目录下
+log_file_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'download_log.log') if '__file__' in locals() else 'download_log.log'
+logger = logging.getLogger()
+logger.setLevel(logging.INFO)
 
-HEADERS = {
-    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.131 Safari/537.36"
+# 避免在多次导入时重复添加handler
+if not logger.handlers:
+    # 文件处理器
+    file_handler = logging.FileHandler(log_file_path, mode='w', encoding='utf-8')
+    file_handler.setLevel(logging.INFO)
+    # 控制台处理器
+    console_handler = logging.StreamHandler(sys.stdout)
+    console_handler.setLevel(logging.INFO)
+    # 统一格式化
+    formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
+    file_handler.setFormatter(formatter)
+    console_handler.setFormatter(formatter)
+    # 添加到logger
+    logger.addHandler(file_handler)
+    logger.addHandler(console_handler)
+
+# ==============================================================================
+# --- 全局配置 ---
+# ==============================================================================
+HEADERS = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.131 Safari/537.36"}
+HISTORY_URL_FILE = 'processed_urls.txt'
+DOWNLOAD_DIR_TEMP = 'downloads_temp'  # 所有文件先下载到这里
+DOWNLOAD_DIR_CLASSIFIED = 'downloads_final' # 最终分类归档目录
+MAX_THREADS = 5  # 并发下载线程数
+
+# 用于分类的关键字和映射 (关键字建议用小写)
+SUBJECT_KEYWORDS = {
+    "python": "Python",
+    "c语言": "C语言",
+    "图形化": "图形化编程",
+    "机器人": "机器人",
+    "三维创意设计": "三维创意设计",
+    "无人机": "无人机",
+    "电子技术": "电子技术",
 }
+CHINESE_NUMERALS = {'一': '1', '二': '2', '三': '3', '四': '4', '五': '5', '六': '6', '七': '7', '八': '8', '九': '9'}
 
-CHINESE_NUMERALS = {'一': 1, '二': 2, '三': 3, '四': 4, '五': 5, '六': 6, '七': 7, '八': 8, '九': 9}
+# ==============================================================================
+# --- 核心功能函数 ---
+# ==============================================================================
 
-logging.basicConfig(level=logging.INFO, filename='download_log.log', filemode='w',
-                    format='%(asctime)s - %(levelname)s - %(message)s')
+def get_urls_from_sources():
+    """从所有已知来源获取URL列表"""
+    logger.info("开始从所有来源获取URL...")
+    urls_from_robot = get_urls_from_robot()
+    # 在这里可以添加其他获取URL的函数
+    # urls_from_other_source = get_urls_from_other_source()
+    all_urls = set(urls_from_robot) # | set(urls_from_other_source)
+    logger.info(f"所有来源共找到 {len(all_urls)} 个不重复的详情页URL。")
+    return list(all_urls)
 
-CATEGORY_KEYWORDS = {
-    "机器人技术": ["机器人"],
-    "三维创意设计": ["三维创意设计", "三维设计"],
-    "无人机技术": ["无人机"],
-    "电子技术": ["电子技术", "电子"],
-    "C语言": ["C语言"],
-    "Python": ["python", "Python"],
-    "图形化": ["图形化"]
-}
-
-# -------------------- 辅助函数 --------------------
-def extract_urls_from_web(html_content):
-    """从网页 HTML 中提取 URL"""
-    soup = BeautifulSoup(html_content, 'html.parser')
-    urls = []
-    for link in soup.find_all('a', href=True):
-        href = link['href'].strip()
-        if href.startswith("http://www.hunanie.com/nd.jsp"):
-            urls.append(href)
-    return urls
-
-# -------------------- 第一步：提取 URL 并去重 --------------------
-def process_urls():
-    existing_urls = set()
+def get_urls_from_robot():
+    """从主页面的文章列表中提取所有详情页URL"""
     try:
-        with open(URL_FILE, 'r', encoding='utf-8') as existing_file:
-            existing_urls.update(line.strip() for line in existing_file if line.strip())
-    except FileNotFoundError:
-        pass
-
-    if os.path.exists(RESP_FILE):
-        with open(RESP_FILE, 'r', encoding='utf-8') as file:
-            for line in file:
-                line = line.strip()
-                if not line:
-                    continue
-                try:
-                    data = json.loads(line)
-                    for item in data.get('list', []):
-                        url = item.get('url', '')
-                        if url.startswith('http://www.hunanie.com/nd.jsp') and url not in existing_urls:
-                            with open(URL_FILE, 'a', encoding='utf-8') as output_file:
-                                output_file.write(url + '\n')
-                            existing_urls.add(url)
-                except json.JSONDecodeError as e:
-                    logging.error(f"无法解析 JSON 的行: {line}, 错误: {e}")
-    else:
-        logging.warning(f"{RESP_FILE} 不存在，跳过 JSON 提取。")
-
-    try:
-        response = requests.get(WEB_SOURCE_URL, headers=HEADERS, timeout=10)
-        if response.status_code == 200:
-            urls_from_web = extract_urls_from_web(response.text)
-            with open(URL_FILE, 'a', encoding='utf-8') as f:
-                for url in urls_from_web:
-                    if url not in existing_urls:
-                        f.write(url + '\n')
-                        existing_urls.add(url)
-        else:
-            logging.error(f"网页抓取失败，状态码: {response.status_code}")
-    except requests.RequestException as e:
-        logging.error(f"网页抓取异常: {e}")
-
-    if not existing_urls:
-        with open(URL_FILE, 'w', encoding='utf-8') as f:
-            f.write("# 没有可用的下载链接\n")
-
-# -------------------- 第二步：并发下载文件 --------------------
-def fetch_and_download(url):
-    """访问页面并下载里面的附件"""
-    try:
-        response = requests.get(url, headers=HEADERS, timeout=10)
-    except requests.RequestException as e:
-        logging.error(f"访问 {url} 失败: {e}")
-        return
-
-    if response.status_code == 200:
+        url = "http://www.hunanie.com/col.jsp?id=123"
+        response = requests.get(url, headers=HEADERS, timeout=30)
+        response.raise_for_status()
         soup = BeautifulSoup(response.text, 'html.parser')
-        download_link_elements = soup.find_all('a', {'class': 'news_detail_download_item_link'})
-        for elem in download_link_elements:
-            download_link = elem.get('href', '')
-            if not download_link.startswith('http'):
-                download_link = 'http:' + download_link
-            file_name = elem.find('span', {'class': 'news_detail_download_item_text'}).text.strip()
+        # 查找所有包含 nd.jsp 的链接
+        urls = [link['href'] for link in soup.find_all('a', href=True) if "http://www.hunanie.com/nd.jsp" in link.get('href', '')]
+        logger.info(f"成功从robot页面提取{len(set(urls))}个URL")
+        return urls
+    except requests.RequestException as e:
+        logger.error(f"提取robot页面URL时出错: {e}")
+        return []
 
-            logging.info("下载链接: %s 名字: %s", download_link, file_name)
+def load_processed_urls():
+    """加载已处理过的URL历史记录"""
+    if not os.path.exists(HISTORY_URL_FILE):
+        return set()
+    try:
+        with open(HISTORY_URL_FILE, 'r', encoding='utf-8') as f:
+            return {line.strip() for line in f if line.strip()}
+    except Exception as e:
+        logger.error(f"加载历史文件失败: {e}")
+        return set()
 
-            if not os.path.exists(DOWNLOAD_FOLDER):
-                os.makedirs(DOWNLOAD_FOLDER)
+def save_processed_urls(urls_set):
+    """保存更新后的URL历史记录"""
+    try:
+        with open(HISTORY_URL_FILE, 'w', encoding='utf-8') as f:
+            for url in sorted(list(urls_set)):
+                f.write(url + '\n')
+    except Exception as e:
+        logger.error(f"保存历史文件失败: {e}")
 
-            file_path = os.path.join(DOWNLOAD_FOLDER, file_name)
-            try:
-                file_response = requests.get(download_link, timeout=15)
-                with open(file_path, 'wb') as f:
-                    f.write(file_response.content)
-            except requests.RequestException as e:
-                logging.error(f"下载 {download_link} 失败: {e}")
-    else:
-        logging.error("访问 %s 失败，状态码: %s", url, response.status_code)
 
-def download_files_concurrent():
-    if not os.path.exists(URL_FILE):
-        logging.warning(f"{URL_FILE} 不存在，跳过下载。")
+def get_all_download_tasks(url_list):
+    """
+    (步骤1) 顺序遍历所有详情页，收集所有需要下载的文件信息（URL和目标路径）。
+    返回一个任务列表，每个任务是 (下载链接, 保存路径, 文件名) 的元组。
+    """
+    tasks = []
+    if not url_list:
+        return tasks
+        
+    if not os.path.exists(DOWNLOAD_DIR_TEMP):
+        os.makedirs(DOWNLOAD_DIR_TEMP)
+    
+    for url in tqdm(url_list, desc="步骤 1/3 - 正在解析详情页面"):
+        try:
+            response = requests.get(url, headers=HEADERS, timeout=30)
+            if response.status_code == 200:
+                soup = BeautifulSoup(response.text, 'html.parser')
+                download_elements = soup.select('a.news_detail_download_item_link')
+                for element in download_elements:
+                    link = element.get('href')
+                    name_tag = element.select_one('span.news_detail_download_item_text')
+                    if not link or not name_tag:
+                        continue
+                    
+                    # 清理文件名中的非法字符
+                    file_name = name_tag.text.strip().replace('\r', '').replace('\n', '')
+                    safe_file_name = re.sub(r'[\\/*?:"<>|]', "", file_name)
+                    file_path = os.path.join(DOWNLOAD_DIR_TEMP, safe_file_name)
+                    
+                    # 检查文件是否已存在于临时目录或最终目录（防止重复下载）
+                    if os.path.exists(file_path) or check_if_file_exists_in_final_dir(safe_file_name):
+                        continue
+                    
+                    if not link.startswith('http'):
+                        link = 'http:' + link
+                    tasks.append((link, file_path, safe_file_name))
+            time.sleep(random.uniform(0.5, 1.5)) # 解析页面间也需要延时
+        except requests.RequestException as e:
+            logger.error(f"访问详情页失败 {url}: {e}")
+    return tasks
+
+def check_if_file_exists_in_final_dir(filename):
+    """检查文件是否已存在于最终分类目录的任何子文件夹中"""
+    if not os.path.exists(DOWNLOAD_DIR_CLASSIFIED):
+        return False
+    for root, _, files in os.walk(DOWNLOAD_DIR_CLASSIFIED):
+        if filename in files:
+            return True
+    return False
+
+def download_single_file(url, path, filename):
+    """下载单个文件的函数，供线程池调用"""
+    try:
+        response = requests.get(url, timeout=120, stream=True)
+        response.raise_for_status()
+        with open(path, 'wb') as f:
+            for chunk in response.iter_content(chunk_size=8192):
+                f.write(chunk)
+        return f"成功: {filename}"
+    except Exception as e:
+        return f"失败: {filename} - {str(e)}"
+
+def concurrent_downloader(tasks):
+    """(步骤2) 使用线程池并发下载所有文件"""
+    if not tasks:
+        logger.info("没有新的文件需要下载。")
+        return
+        
+    logger.info(f"发现 {len(tasks)} 个新文件，开始 {MAX_THREADS} 线程并发下载...")
+    with ThreadPoolExecutor(max_workers=MAX_THREADS) as executor:
+        futures = [executor.submit(download_single_file, url, path, filename) for url, path, filename in tasks]
+        # 使用tqdm创建进度条
+        pbar = tqdm(as_completed(futures), total=len(tasks), desc="步骤 2/3 - 正在下载文件")
+        for future in pbar:
+            result = future.result()
+            if "失败" in result:
+                # 记录失败日志，但不显示在进度条上
+                logger.warning(result)
+
+def classify_downloaded_files():
+    """(步骤3) 遍历临时目录，将文件按 学科/等级 分类到最终目录"""
+    logger.info("\n========== 步骤 3/3 - 开始执行文件分类任务 ==========")
+    if not os.path.exists(DOWNLOAD_DIR_TEMP):
+        logger.info("临时下载目录不存在，无需分类。")
         return
 
-    with open(URL_FILE, 'r', encoding='utf-8') as file:
-        urls = [line.strip() for line in file if line.strip() and not line.startswith("#")]
-
-    if not urls:
-        logging.warning("URL 文件为空，跳过下载任务。")
+    files_to_classify = [f for f in os.listdir(DOWNLOAD_DIR_TEMP) if os.path.isfile(os.path.join(DOWNLOAD_DIR_TEMP, f))]
+    if not files_to_classify:
+        logger.info("临时文件夹为空，无需分类。")
+        try: os.rmdir(DOWNLOAD_DIR_TEMP)
+        except OSError: pass # 如果目录非空（比如有隐藏文件），则忽略
         return
+        
+    for filename in tqdm(files_to_classify, desc="步骤 3/3 - 正在分类文件"):
+        source_path = os.path.join(DOWNLOAD_DIR_TEMP, filename)
+        subject, level = "未分类", "未分类"
 
-    with ThreadPoolExecutor(max_workers=5) as executor:
-        futures = {executor.submit(fetch_and_download, url): url for url in urls}
-        for future in as_completed(futures):
-            url = futures[future]
-            try:
-                future.result()
-                time.sleep(random.uniform(0.5, 1.5))
-            except Exception as e:
-                logging.error(f"下载任务出错 {url}: {e}")
+        for keyword, sub_name in SUBJECT_KEYWORDS.items():
+            if keyword in filename.lower():
+                subject = sub_name
+                break
+        
+        level_match = re.search(r'([一二三四五六七八九\d]+)级', filename)
+        if level_match:
+            level_str = level_match.group(1)
+            level = f"{CHINESE_NUMERALS.get(level_str, level_str)}级"
+        
+        target_dir = os.path.join(DOWNLOAD_DIR_CLASSIFIED, subject, level)
+        if not os.path.exists(target_dir):
+            os.makedirs(target_dir)
+        
+        target_path = os.path.join(target_dir, filename)
+        shutil.move(source_path, target_path)
+    
+    logger.info("分类完成！")
+    try:
+        if not os.listdir(DOWNLOAD_DIR_TEMP):
+            os.rmdir(DOWNLOAD_DIR_TEMP)
+            logger.info(f"已清理空的临时目录: {DOWNLOAD_DIR_TEMP}")
+    except Exception as e:
+        logger.error(f"清理临时目录失败: {e}")
 
-# -------------------- 第三步：按类型和等级分类文件 --------------------
-def convert_chinese_to_arabic(chinese_number):
-    return CHINESE_NUMERALS.get(chinese_number, -1)
+def main_job():
+    """主任务流程，协调所有操作"""
+    logger.info("========== 脚本开始执行 ==========")
+    processed_urls = load_processed_urls()
+    logger.info(f"已加载 {len(processed_urls)} 条历史URL记录。")
 
-def classify_and_copy_files(source_directory, destination_directory):
-    for root, dirs, files in os.walk(source_directory):
-        for file in files:
-            # 分类
-            category = "其他"
-            for cat_name, keywords in CATEGORY_KEYWORDS.items():
-                if any(kw.lower() in file.lower() for kw in keywords):
-                    category = cat_name
-                    break
+    all_found_urls = get_urls_from_sources()
+    new_urls_to_process = list(set(all_found_urls) - processed_urls)
+    logger.info(f"本次运行发现 {len(new_urls_to_process)} 个新的详情页需要处理。")
 
-            # 等级
-            match = re.search(r'([一二三四五六七八九\d]+)级', file)
-            if match:
-                level_str = match.group(1)
-                if level_str in CHINESE_NUMERALS:
-                    level = convert_chinese_to_arabic(level_str)
-                else:
-                    try:
-                        level = int(level_str)
-                    except ValueError:
-                        level = "其他"
-            else:
-                level = "其他"
+    download_tasks = get_all_download_tasks(new_urls_to_process)
+    concurrent_downloader(download_tasks)
+    classify_downloaded_files()
+    
+    updated_processed_urls = processed_urls.union(new_urls_to_process)
+    if len(updated_processed_urls) > len(processed_urls):
+        save_processed_urls(updated_processed_urls)
+        logger.info(f"URL历史记录已更新，总计 {len(updated_processed_urls)} 条。")
 
-            dest_path = os.path.join(destination_directory, category, f"等级{level}" if level != "其他" else level)
-            os.makedirs(dest_path, exist_ok=True)
-            shutil.copy(os.path.join(root, file), dest_path)
+    logger.info("========== 所有任务执行完毕 ==========")
 
-# -------------------- 主流程 --------------------
 if __name__ == "__main__":
-    logging.info("=== 开始提取 URL ===")
-    process_urls()
-
-    logging.info("=== 开始并发下载文件（5线程） ===")
-    download_files_concurrent()
-
-    logging.info("=== 开始分类文件（按类型+等级） ===")
-    classify_and_copy_files(SOURCE_DIRECTORY, DESTINATION_DIRECTORY)
-
-    logging.info("=== 任务完成 ===")
+    try:
+        main_job()
+    except KeyboardInterrupt:
+        logger.info("脚本被用户手动中断。")
+    except Exception as e:
+        logger.error(f"脚本顶层运行时捕获到意外错误: {e}", exc_info=True)

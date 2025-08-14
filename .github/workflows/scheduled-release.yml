@@ -2,7 +2,7 @@ name: Scheduled Crawl & Release
 
 on:
   schedule:
-    - cron: '0 0 1 1,4,7,10 *'    # 每天 UTC 03:30 运行
+    - cron: '0 0 1 1,4,7,10 *'    
   workflow_dispatch: {}     # 支持手动触发
 
 permissions:
@@ -13,54 +13,77 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
+      - name: Checkout Repository
         uses: actions/checkout@v4
         with:
+          # 获取所有历史记录，以便正确比较文件变更
           fetch-depth: 0
 
-      - name: Set up Python
+      - name: Set up Python 3.11
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
 
-      - name: Install dependencies
+      - name: Install Dependencies
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Run crawler script
+      - name: Install 7-Zip
+        run: sudo apt-get update && sudo apt-get install -y p7zip-full
+              
+      - name: Install Playwright Browsers
+        run: playwright install --with-deps
+
+      - name: Run Crawler and Downloader Script
         run: |
           python script.py
-          mkdir -p download
+          mkdir -p downloads_temp
+          mkdir -p downloads_final
+          
 
-      - name: Commit url.txt if changed
+      - name: Commit History File if Changed
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add url.txt
+          git add processed_urls.txt
+          # 检查暂存区是否有变更
           if ! git diff --cached --quiet; then
-            git commit -m "chore: auto update url.txt [skip ci]"
+            git commit -m "chore: auto update processed_urls.txt [skip ci]"
             git push
           else
-            echo "No changes to url.txt."
+            echo "No changes to processed_urls.txt."
           fi
 
-      - name: Prepare release files
+      - name: Prepare Release Files if New Content Exists
+        id: prepare_release
         run: |
-          TAG="v$(date -u +'%Y%m%d-%H%M%S')"
-          NAME="Auto Release $(date -u +'%Y-%m-%d %H:%M:%S') UTC"
-          ZIP="download-${TAG}.zip"
-          7z a -tzip "$ZIP" download >/dev/null || true
-          echo "TAG=$TAG"  >> $GITHUB_ENV
-          echo "NAME=$NAME" >> $GITHUB_ENV
-          echo "ZIP=$ZIP" >> $GITHUB_ENV
-          {
-            echo "### 自动发布"
-            echo ""
-            echo "- 时间：$(date -u +'%Y-%m-%d %H:%M:%S') UTC"
-            echo "- URL 列表：\`url.txt\`"
-            echo "- 下载包：\`${ZIP}\`"
-          } > RELEASE_NOTES.md
+          # 检查最终下载目录是否存在且非空
+          if [ -d "downloads_final" ] && [ "$(ls -A downloads_final)" ]; then
+            echo "New files found. Preparing release."
+            TAG="v$(date -u +'%Y%m%d-%H%M%S')"
+            NAME="Auto Release $(date -u +'%Y-%m-%d %H:%M:%S') UTC"
+            ZIP_NAME="downloads-${TAG}.zip"
+            
+            # 将最终分类好的文件夹压缩
+            7z a -tzip "$ZIP_NAME" ./downloads_final/*
+            
+            echo "TAG=${TAG}" >> $GITHUB_ENV
+            echo "NAME=${NAME}" >> $GITHUB_ENV
+            echo "ZIP_NAME=${ZIP_NAME}" >> $GITHUB_ENV
+            echo "HAS_FILES=true" >> $GITHUB_ENV
+            
+            {
+              echo "### 自动发布"
+              echo ""
+              echo "- **时间**: $(date -u +'%Y-%m-%d %H:%M:%S') UTC"
+              echo "- **历史记录**: \`processed_urls.txt\`"
+              echo "- **下载包**: \`${ZIP_NAME}\`"
+            } > RELEASE_NOTES.md
+          else
+            echo "No new files downloaded. Skipping release."
+            echo "HAS_FILES=false" >> $GITHUB_ENV
+          fi
 
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
@@ -68,9 +91,6 @@ jobs:
           tag_name: ${{ env.TAG }}
           name: ${{ env.NAME }}
           body_path: RELEASE_NOTES.md
-          files: |
-            ${{ env.ZIP }}
-            url.txt
-            download_log.log
+          files: ${{ env.ZIP_NAME }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
