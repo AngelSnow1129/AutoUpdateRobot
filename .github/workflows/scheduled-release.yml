@@ -2,11 +2,11 @@ name: Scheduled Crawl & Release
 
 on:
   schedule:
-    - cron: '0 0 1 1,4,7,10 *' # 每季度（1,4,7,10月）的1号凌晨0点执行
-  workflow_dispatch: {}      # 支持手动触发
+    - cron: '0 0 1 1,4,7,10 *'
+  workflow_dispatch: {}
 
 permissions:
-  contents: write # 允许 GITHUB_TOKEN 写入仓库内容（提交文件、创建Release）
+  contents: write
 
 jobs:
   run-and-release:
@@ -16,14 +16,13 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
         with:
-          # 获取所有历史记录，以便正确比较和提交文件变更
           fetch-depth: 0
 
       - name: Set up Python 3.11
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
-          cache: 'pip' # [优化] 增加pip缓存，加快后续构建速度
+          cache: 'pip'
 
       - name: Install Dependencies
         run: |
@@ -36,66 +35,66 @@ jobs:
       - name: Install Playwright Browsers
         run: playwright install --with-deps
 
-      - name: Run Crawler and Downloader Script
+      - name: Run Crawler, Downloader & Sorter Script
         run: python script.py
 
       - name: Commit History File if Changed
-        id: commit_history
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          # 只添加指定的文件，避免意外添加其他文件
           git add processed_urls.txt
-
           if ! git diff --cached --quiet; then
             git commit -m "chore: auto update processed_urls.txt [skip ci]"
             git push
-            echo "Pushed updated processed_urls.txt"
           else
             echo "No changes to processed_urls.txt."
           fi
 
+      # [重大修改] 此步骤现在会为每个分类创建一个独立的zip文件
       - name: Prepare Release Files if New Content Exists
         id: prepare_release
         run: |
-          # 检查最终下载目录是否存在且非空
-          if [ -d "downloads_final" ] && [ "$(ls -A downloads_final)" ]; then
-            echo "New files found. Preparing release."
-            TAG="v$(date -u +'%Y%m%d-%H%M%S')"
-            NAME="Auto Release $(date -u +'%Y-%m-%d %H:%M:%S') UTC"
-            ZIP_NAME="downloads-${TAG}.zip"
-
-            # [修正] 改进压缩命令，进入目录进行压缩，避免在zip包中包含父目录
-            (cd downloads_final && 7z a -tzip "../${ZIP_NAME}" .)
-
-            echo "TAG=${TAG}" >> $GITHUB_ENV
-            echo "NAME=${NAME}" >> $GITHUB_ENV
-            echo "ZIP_NAME=${ZIP_NAME}" >> $GITHUB_ENV
+          if [ -d "downloads_classified" ] && [ "$(ls -A downloads_classified)" ]; then
+            echo "New classified files found. Preparing release."
+            
+            # 1. 循环遍历 classified 目录下的每个学科文件夹
+            for subject_dir in downloads_classified/*; do
+              if [ -d "$subject_dir" ]; then
+                subject_name=$(basename "$subject_dir")
+                zip_file="${subject_name}.zip"
+                echo "Compressing '$subject_name' to '$zip_file'..."
+                # 2. 进入学科目录，将其内容压缩到项目根目录
+                (cd "$subject_dir" && 7z a -tzip "../../${zip_file}" .)
+              fi
+            done
+            
+            # 3. 设置环境变量，用于后续步骤
+            echo "TAG=v$(date -u +'%Y%m%d-%H%M%S')" >> $GITHUB_ENV
+            echo "NAME=Auto Release $(date -u +'%Y-%m-%d %H:%M:%S') UTC" >> $GITHUB_ENV
             echo "HAS_FILES=true" >> $GITHUB_ENV
-
-            # [优化] 生成更详细的 Release Notes
+            
+            # 4. 生成 Release Notes
             {
               echo "### 自动发布"
               echo ""
               echo "- **时间**: $(date -u +'%Y-%m-%d %H:%M:%S') UTC"
               echo "- **变更记录**: [查看 commit](https://github.com/${{ github.repository }}/commit/$(git rev-parse HEAD))"
-              echo "- **历史记录文件**: \`processed_urls.txt\`"
-              echo "- **下载包**: \`${ZIP_NAME}\`"
+              echo "- **说明**: 各学科真题及资料已分类打包，请在下方附件中按需下载。"
             } > RELEASE_NOTES.md
           else
-            echo "No new files downloaded. Skipping release."
+            echo "No new classified files found. Skipping release."
             echo "HAS_FILES=false" >> $GITHUB_ENV
           fi
 
+      # [修改] 此步骤现在会上传所有生成的 .zip 文件
       - name: Create GitHub Release
-        # [修正] 增加条件判断，仅在有新文件时才创建 Release
-        if: steps.prepare_release.outputs.HAS_FILES == 'true' || env.HAS_FILES == 'true'
+        if: env.HAS_FILES == 'true'
         uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{ env.TAG }}
           name: ${{ env.NAME }}
           body_path: RELEASE_NOTES.md
-          files: ${{ env.ZIP_NAME }}
+          # 使用通配符 `*.zip` 来匹配所有在根目录生成的zip文件
+          files: '*.zip'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
