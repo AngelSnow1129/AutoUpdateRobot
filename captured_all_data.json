@@ -1,0 +1,2522 @@
+[
+  {
+    "success": true,
+    "list": [
+      {
+        "title": "2025年机器人技术等级考试——真题（03月理论+实操）",
+        "dateStr": "2025-04-11",
+        "url": "http://www.hunanie.com/nd.jsp?id=279"
+      },
+      {
+        "title": "2024年无人机技术——真题（12月）",
+        "dateStr": "2025-02-21",
+        "url": "http://www.hunanie.com/nd.jsp?id=273"
+      },
+      {
+        "title": "2024年机器人技术等级考试——真题（12月理论+实操）",
+        "dateStr": "2025-02-21",
+        "url": "http://www.hunanie.com/nd.jsp?id=269"
+      },
+      {
+        "title": "2024年机器人技术等级考试——真题（09月理论+实操）",
+        "dateStr": "2024-11-13",
+        "url": "http://www.hunanie.com/nd.jsp?id=237"
+      },
+      {
+        "title": "2024年机器人技术等级考试——真题（06月理论+实操）",
+        "dateStr": "2024-09-02",
+        "url": "http://www.hunanie.com/nd.jsp?id=220"
+      },
+      {
+        "title": "2024年机器人技术等级考试——真题（03月理论+实操）",
+        "dateStr": "2024-08-01",
+        "url": "http://www.hunanie.com/nd.jsp?id=198"
+      },
+      {
+        "title": "2023年机器人技术等级考试——真题（12月理论）",
+        "dateStr": "2023-12-31",
+        "url": "http://www.hunanie.com/nd.jsp?id=133"
+      },
+      {
+        "title": "2023年机器人技术等级考试——真题（12月实操+评分标准）",
+        "dateStr": "2023-12-31",
+        "url": "http://www.hunanie.com/nd.jsp?id=132"
+      },
+      {
+        "title": "2023年机器人技术等级考试——真题（9月理论）",
+        "dateStr": "2023-10-01",
+        "url": "http://www.hunanie.com/nd.jsp?id=131"
+      },
+      {
+        "title": "2023年机器人技术等级考试——真题（9月实操）",
+        "dateStr": "2023-10-01",
+        "url": "http://www.hunanie.com/nd.jsp?id=130"
+      }
+    ],
+    "source": "HTML_Scrape"
+  },
+  {
+    "rt": 0,
+    "success": true,
+    "msg": "",
+    "list": [
+      {
+        "pictureId": "",
+        "id": 129,
+        "imgPath": "//0.ss.508sys.com/image/rimage/fromSite/default/noimage.jpg",
+        "imgWidth": 0,
+        "imgHeight": 0,
+        "title": "2023年机器人技术等级考试——评分标准",
+        "summary": "",
+        "url": "http://www.hunanie.com/nd.jsp?id=129",
+        "ndReqArgs": "{\"args\":{\"id\":129,\"fromMid\":3,\"groupId\":14},\"type\":31}",
+        "flag": 1024,
+        "groupIds": [
+          14
+        ],
+        "date": 1696148580000,
+        "dateStr": "2023-10-01",
+        "top": 0,
+        "views": 188,
+        "publishRegularly": true,
+        "authStatus": 0,
+        "subTitle": "",
+        "groups": [
+          {
+            "id": 14,
+            "name": "真题：机器人技术",
+            "url": "http://www.hunanie.com/nr.jsp?_reqArgs=%7B%22args%22%3A%7B%22groupId%22%3A14%2C%22jpt%22%3A4%7D%2C%22type%22%3A32%7D"
+          }
+        ]
+      },
+      {
+        "pictureId": "",
+        "id": 128,
+        "imgPath": "//0.ss.508sys.com/image/rimage/fromSite/default/noimage.jpg",
+        "imgWidth": 0,
+        "imgHeight": 0,
+        "title": "2023年机器人技术等级考试——真题（6月理论）",
+        "summary": "",
+        "url": "http://www.hunanie.com/nd.jsp?id=128",
+        "ndReqArgs": "{\"args\":{\"id\":128,\"fromMid\":3,\"groupId\":14},\"type\":31}",
+        "flag": 1024,
+        "groupIds": [
+          14
+        ],
+        "date": 1688199660000,
+        "dateStr": "2023-07-01",
+        "top": 0,
+        "views": 462,
+        "publishRegularly": true,
+        "authStatus": 0,
+        "subTitle": "",
+        "groups": [
+          {
+            "id": 14,
+            "name": "真题：机器人技术",
+            "url": "http://www.hunanie.com/nr.jsp?_reqArgs=%7B%22args%22%3A%7B%22groupId%22%3A14%2C%22jpt%22%3A4%7D%2C%22type%22%3A32%7D"
+          }
+        ]
+      },
+      {
+        "pictureId": "",
+        "id": 120,
+        "imgPath": "//0.ss.508sys.com/image/rimage/fromSite/default/noimage.jpg",
+        "imgWidth": 0,
+        "imgHeight": 0,
+        "title": "2023年机器人技术等级考试——真题（6月实操）",
+        "summary": "",
+        "url": "http://www.hunanie.com/nd.jsp?id=120",
+        "ndReqArgs": "{\"args\":{\"id\":120,\"fromMid\":3,\"groupId\":14},\"type\":31}",
+        "flag": 1024,
+        "groupIds": [
+          14
+        ],
+        "date": 1688198520000,
+        "dateStr": "2023-07-01",
+        "top": 0,
+        "views": 407,
+        "publishRegularly": true,
+        "authStatus": 0,
+        "subTitle": "",
+        "groups": [
+          {
+            "id": 14,
+            "name": "真题：机器人技术",
+            "url": "http://www.hunanie.com/nr.jsp?_reqArgs=%7B%22args%22%3A%7B%22groupId%22%3A14%2C%22jpt%22%3A4%7D%2C%22type%22%3A32%7D"
+          }
+        ]
+      },
+      {
+        "pictureId": "",
+        "id": 127,
+        "imgPath": "//0.ss.508sys.com/image/rimage/fromSite/default/noimage.jpg",
+        "imgWidth": 0,
+        "imgHeight": 0,
+        "title": "2023年机器人技术等级考试——真题（3月理论+实操）",
+        "summary": "",
+        "url": "http://www.hunanie.com/nd.jsp?id=127",
+        "ndReqArgs": "{\"args\":{\"id\":127,\"fromMid\":3,\"groupId\":14},\"type\":31}",
+        "flag": 1024,
+        "groupIds": [
+          14
+        ],
+        "date": 1680337020000,
+        "dateStr": "2023-04-01",
+        "top": 0,
+        "views": 608,
+        "publishRegularly": true,
+        "authStatus": 0,
+        "subTitle": "",
+        "groups": [
+          {
+            "id": 14,
+            "name": "真题：机器人技术",
+            "url": "http://www.hunanie.com/nr.jsp?_reqArgs=%7B%22args%22%3A%7B%22groupId%22%3A14%2C%22jpt%22%3A4%7D%2C%22type%22%3A32%7D"
+          }
+        ]
+      },
+      {
+        "pictureId": "",
+        "id": 126,
+        "imgPath": "//0.ss.508sys.com/image/rimage/fromSite/default/noimage.jpg",
+        "imgWidth": 0,
+        "imgHeight": 0,
+        "title": "2022年机器人技术等级考试——真题（12月理论）",
+        "summary": "",
+        "url": "http://www.hunanie.com/nd.jsp?id=126",
+        "ndReqArgs": "{\"args\":{\"id\":126,\"fromMid\":3,\"groupId\":14},\"type\":31}",
+        "flag": 1024,
+        "groupIds": [
+          14
+        ],
+        "date": 1672474500000,
+        "dateStr": "2022-12-31",
+        "top": 0,
+        "views": 377,
+        "publishRegularly": true,
+        "authStatus": 0,
+        "subTitle": "",
+        "groups": [
+          {
+            "id": 14,
+            "name": "真题：机器人技术",
+            "url": "http://www.hunanie.com/nr.jsp?_reqArgs=%7B%22args%22%3A%7B%22groupId%22%3A14%2C%22jpt%22%3A4%7D%2C%22type%22%3A32%7D"
+          }
+        ]
+      },
+      {
+        "pictureId": "",
+        "id": 125,
+        "imgPath": "//0.ss.508sys.com/image/rimage/fromSite/default/noimage.jpg",
+        "imgWidth": 0,
+        "imgHeight": 0,
+        "title": "2022年机器人技术等级考试——真题（12月实操）",
+        "summary": "",
+        "url": "http://www.hunanie.com/nd.jsp?id=125",
+        "ndReqArgs": "{\"args\":{\"id\":125,\"fromMid\":3,\"groupId\":14},\"type\":31}",
+        "flag": 1024,
+        "groupIds": [
+          14
+        ],
+        "date": 1672387860000,
+        "dateStr": "2022-12-30",
+        "top": 0,
+        "views": 321,
+        "publishRegularly": true,
+        "authStatus": 0,
+        "subTitle": "",
+        "groups": [
+          {
+            "id": 14,
+            "name": "真题：机器人技术",
+            "url": "http://www.hunanie.com/nr.jsp?_reqArgs=%7B%22args%22%3A%7B%22groupId%22%3A14%2C%22jpt%22%3A4%7D%2C%22type%22%3A32%7D"
+          }
+        ]
+      },
+      {
+        "pictureId": "",
+        "id": 124,
+        "imgPath": "//0.ss.508sys.com/image/rimage/fromSite/default/noimage.jpg",
+        "imgWidth": 0,
+        "imgHeight": 0,
+        "title": "2022年机器人技术等级考试——真题（9月理论）",
+        "summary": "",
+        "url": "http://www.hunanie.com/nd.jsp?id=124",
+        "ndReqArgs": "{\"args\":{\"id\":124,\"fromMid\":3,\"groupId\":14},\"type\":31}",
+        "flag": 1024,
+        "groupIds": [
+          14
+        ],
+        "date": 1664611800000,
+        "dateStr": "2022-10-01",
+        "top": 0,
+        "views": 293,
+        "publishRegularly": true,
+        "authStatus": 0,
+        "subTitle": "",
+        "groups": [
+          {
+            "id": 14,
+            "name": "真题：机器人技术",
+            "url": "http://www.hunanie.com/nr.jsp?_reqArgs=%7B%22args%22%3A%7B%22groupId%22%3A14%2C%22jpt%22%3A4%7D%2C%22type%22%3A32%7D"
+          }
+        ]
+      },
+      {
+        "pictureId": "",
+        "id": 123,
+        "imgPath": "//0.ss.508sys.com/image/rimage/fromSite/default/noimage.jpg",
+        "imgWidth": 0,
+        "imgHeight": 0,
+        "title": "2022年机器人技术等级考试——真题（9月实操）",
+        "summary": "",
+        "url": "http://www.hunanie.com/nd.jsp?id=123",
+        "ndReqArgs": "{\"args\":{\"id\":123,\"fromMid\":3,\"groupId\":14},\"type\":31}",
+        "flag": 1024,
+        "groupIds": [
+          14
+        ],
+        "date": 1664611680000,
+        "dateStr": "2022-10-01",
+        "top": 0,
+        "views": 257,
+        "publishRegularly": true,
+        "authStatus": 0,
+        "subTitle": "",
+        "groups": [
+          {
+            "id": 14,
+            "name": "真题：机器人技术",
+            "url": "http://www.hunanie.com/nr.jsp?_reqArgs=%7B%22args%22%3A%7B%22groupId%22%3A14%2C%22jpt%22%3A4%7D%2C%22type%22%3A32%7D"
+          }
+        ]
+      },
+      {
+        "pictureId": "",
+        "id": 121,
+        "imgPath": "//0.ss.508sys.com/image/rimage/fromSite/default/noimage.jpg",
+        "imgWidth": 0,
+        "imgHeight": 0,
+        "title": "2022年机器人技术等级考试——真题（6月理论）",
+        "summary": "",
+        "url": "http://www.hunanie.com/nd.jsp?id=121",
+        "ndReqArgs": "{\"args\":{\"id\":121,\"fromMid\":3,\"groupId\":14},\"type\":31}",
+        "flag": 1024,
+        "groupIds": [
+          14
+        ],
+        "date": 1656662640000,
+        "dateStr": "2022-07-01",
+        "top": 0,
+        "views": 273,
+        "publishRegularly": true,
+        "authStatus": 0,
+        "subTitle": "",
+        "groups": [
+          {
+            "id": 14,
+            "name": "真题：机器人技术",
+            "url": "http://www.hunanie.com/nr.jsp?_reqArgs=%7B%22args%22%3A%7B%22groupId%22%3A14%2C%22jpt%22%3A4%7D%2C%22type%22%3A32%7D"
+          }
+        ]
+      },
+      {
+        "pictureId": "",
+        "id": 122,
+        "imgPath": "//0.ss.508sys.com/image/rimage/fromSite/default/noimage.jpg",
+        "imgWidth": 0,
+        "imgHeight": 0,
+        "title": "2022年机器人技术等级考试——真题（6月实操）",
+        "summary": "",
+        "url": "http://www.hunanie.com/nd.jsp?id=122",
+        "ndReqArgs": "{\"args\":{\"id\":122,\"fromMid\":3,\"groupId\":14},\"type\":31}",
+        "flag": 1024,
+        "groupIds": [
+          14
+        ],
+        "date": 1656655560000,
+        "dateStr": "2022-07-01",
+        "top": 0,
+        "views": 219,
+        "publishRegularly": true,
+        "authStatus": 0,
+        "subTitle": "",
+        "groups": [
+          {
+            "id": 14,
+            "name": "真题：机器人技术",
+            "url": "http://www.hunanie.com/nr.jsp?_reqArgs=%7B%22args%22%3A%7B%22groupId%22%3A14%2C%22jpt%22%3A4%7D%2C%22type%22%3A32%7D"
+          }
+        ]
+      }
+    ],
+    "total": 39
+  },
+  {
+    "rt": 0,
+    "success": true,
+    "msg": "",
+    "list": [
+      {
+        "pictureId": "",
+        "id": 119,
+        "imgPath": "//0.ss.508sys.com/image/rimage/fromSite/default/noimage.jpg",
+        "imgWidth": 0,
+        "imgHeight": 0,
+        "title": "2022年机器人技术等级考试——真题（3月理论）",
+        "summary": "",
+        "url": "http://www.hunanie.com/nd.jsp?id=119",
+        "ndReqArgs": "{\"args\":{\"id\":119,\"fromMid\":3,\"groupId\":14},\"type\":31}",
+        "flag": 1024,
+        "groupIds": [
+          14
+        ],
+        "date": 1648800000000,
+        "dateStr": "2022-04-01",
+        "top": 0,
+        "views": 238,
+        "publishRegularly": true,
+        "authStatus": 0,
+        "subTitle": "",
+        "groups": [
+          {
+            "id": 14,
+            "name": "真题：机器人技术",
+            "url": "http://www.hunanie.com/nr.jsp?_reqArgs=%7B%22args%22%3A%7B%22groupId%22%3A14%2C%22jpt%22%3A4%7D%2C%22type%22%3A32%7D"
+          }
+        ]
+      },
+      {
+        "pictureId": "",
+        "id": 118,
+        "imgPath": "//0.ss.508sys.com/image/rimage/fromSite/default/noimage.jpg",
+        "imgWidth": 0,
+        "imgHeight": 0,
+        "title": "2022年机器人技术等级考试——真题（3月实操）",
+        "summary": "",
+        "url": "http://www.hunanie.com/nd.jsp?id=118",
+        "ndReqArgs": "{\"args\":{\"id\":118,\"fromMid\":3,\"groupId\":14},\"type\":31}",
+        "flag": 1024,
+        "groupIds": [
+          14
+        ],
+        "date": 1648799940000,
+        "dateStr": "2022-04-01",
+        "top": 0,
+        "views": 211,
+        "publishRegularly": true,
+        "authStatus": 0,
+        "subTitle": "",
+        "groups": [
+          {
+            "id": 14,
+            "name": "真题：机器人技术",
+            "url": "http://www.hunanie.com/nr.jsp?_reqArgs=%7B%22args%22%3A%7B%22groupId%22%3A14%2C%22jpt%22%3A4%7D%2C%22type%22%3A32%7D"
+          }
+        ]
+      },
+      {
+        "pictureId": "",
+        "id": 117,
+        "imgPath": "//0.ss.508sys.com/image/rimage/fromSite/default/noimage.jpg",
+        "imgWidth": 0,
+        "imgHeight": 0,
+        "title": "2021年机器人技术等级考试——真题（12月理论）",
+        "summary": "",
+        "url": "http://www.hunanie.com/nd.jsp?id=117",
+        "ndReqArgs": "{\"args\":{\"id\":117,\"fromMid\":3,\"groupId\":14},\"type\":31}",
+        "flag": 1024,
+        "groupIds": [
+          14
+        ],
+        "date": 1640937420000,
+        "dateStr": "2021-12-31",
+        "top": 0,
+        "views": 177,
+        "publishRegularly": true,
+        "authStatus": 0,
+        "subTitle": "",
+        "groups": [
+          {
+            "id": 14,
+            "name": "真题：机器人技术",
+            "url": "http://www.hunanie.com/nr.jsp?_reqArgs=%7B%22args%22%3A%7B%22groupId%22%3A14%2C%22jpt%22%3A4%7D%2C%22type%22%3A32%7D"
+          }
+        ]
+      },
+      {
+        "pictureId": "",
+        "id": 116,
+        "imgPath": "//0.ss.508sys.com/image/rimage/fromSite/default/noimage.jpg",
+        "imgWidth": 0,
+        "imgHeight": 0,
+        "title": "2021年机器人技术等级考试——真题（12月实操）",
+        "summary": "",
+        "url": "http://www.hunanie.com/nd.jsp?id=116",
+        "ndReqArgs": "{\"args\":{\"id\":116,\"fromMid\":3,\"groupId\":14},\"type\":31}",
+        "flag": 1024,
+        "groupIds": [
+          14
+        ],
+        "date": 1640937300000,
+        "dateStr": "2021-12-31",
+        "top": 0,
+        "views": 182,
+        "publishRegularly": true,
+        "authStatus": 0,
+        "subTitle": "",
+        "groups": [
+          {
+            "id": 14,
+            "name": "真题：机器人技术",
+            "url": "http://www.hunanie.com/nr.jsp?_reqArgs=%7B%22args%22%3A%7B%22groupId%22%3A14%2C%22jpt%22%3A4%7D%2C%22type%22%3A32%7D"
+          }
+        ]
+      },
+      {
+        "pictureId": "",
+        "id": 114,
+        "imgPath": "//0.ss.508sys.com/image/rimage/fromSite/default/noimage.jpg",
+        "imgWidth": 0,
+        "imgHeight": 0,
+        "title": "2021年机器人技术等级考试——真题（9月理论）",
+        "summary": "",
+        "url": "http://www.hunanie.com/nd.jsp?id=114",
+        "ndReqArgs": "{\"args\":{\"id\":114,\"fromMid\":3,\"groupId\":14},\"type\":31}",
+        "flag": 1024,
+        "groupIds": [
+          14
+        ],
+        "date": 1633074240000,
+        "dateStr": "2021-10-01",
+        "top": 0,
+        "views": 245,
+        "publishRegularly": true,
+        "authStatus": 0,
+        "subTitle": "",
+        "groups": [
+          {
+            "id": 14,
+            "name": "真题：机器人技术",
+            "url": "http://www.hunanie.com/nr.jsp?_reqArgs=%7B%22args%22%3A%7B%22groupId%22%3A14%2C%22jpt%22%3A4%7D%2C%22type%22%3A32%7D"
+          }
+        ]
+      },
+      {
+        "pictureId": "",
+        "id": 115,
+        "imgPath": "//0.ss.508sys.com/image/rimage/fromSite/default/noimage.jpg",
+        "imgWidth": 0,
+        "imgHeight": 0,
+        "title": "2021年机器人技术等级考试——真题（9月实操）",
+        "summary": "",
+        "url": "http://www.hunanie.com/nd.jsp?id=115",
+        "ndReqArgs": "{\"args\":{\"id\":115,\"fromMid\":3,\"groupId\":14},\"type\":31}",
+        "flag": 1024,
+        "groupIds": [
+          14
+        ],
+        "date": 1633056540000,
+        "dateStr": "2021-10-01",
+        "top": 0,
+        "views": 169,
+        "publishRegularly": true,
+        "authStatus": 0,
+        "subTitle": "",
+        "groups": [
+          {
+            "id": 14,
+            "name": "真题：机器人技术",
+            "url": "http://www.hunanie.com/nr.jsp?_reqArgs=%7B%22args%22%3A%7B%22groupId%22%3A14%2C%22jpt%22%3A4%7D%2C%22type%22%3A32%7D"
+          }
+        ]
+      },
+      {
+        "pictureId": "",
+        "id": 113,
+        "imgPath": "//0.ss.508sys.com/image/rimage/fromSite/default/noimage.jpg",
+        "imgWidth": 0,
+        "imgHeight": 0,
+        "title": "2021年机器人技术等级考试——真题（6月理论）",
+        "summary": "",
+        "url": "http://www.hunanie.com/nd.jsp?id=113",
+        "ndReqArgs": "{\"args\":{\"id\":113,\"fromMid\":3,\"groupId\":14},\"type\":31}",
+        "flag": 1024,
+        "groupIds": [
+          14
+        ],
+        "date": 1625125380000,
+        "dateStr": "2021-07-01",
+        "top": 0,
+        "views": 167,
+        "publishRegularly": true,
+        "authStatus": 0,
+        "subTitle": "",
+        "groups": [
+          {
+            "id": 14,
+            "name": "真题：机器人技术",
+            "url": "http://www.hunanie.com/nr.jsp?_reqArgs=%7B%22args%22%3A%7B%22groupId%22%3A14%2C%22jpt%22%3A4%7D%2C%22type%22%3A32%7D"
+          }
+        ]
+      },
+      {
+        "pictureId": "",
+        "id": 112,
+        "imgPath": "//0.ss.508sys.com/image/rimage/fromSite/default/noimage.jpg",
+        "imgWidth": 0,
+        "imgHeight": 0,
+        "title": "2021年机器人技术等级考试——真题（6月实践）",
+        "summary": "",
+        "url": "http://www.hunanie.com/nd.jsp?id=112",
+        "ndReqArgs": "{\"args\":{\"id\":112,\"fromMid\":3,\"groupId\":14},\"type\":31}",
+        "flag": 1024,
+        "groupIds": [
+          14
+        ],
+        "date": 1625125320000,
+        "dateStr": "2021-07-01",
+        "top": 0,
+        "views": 155,
+        "publishRegularly": true,
+        "authStatus": 0,
+        "subTitle": "",
+        "groups": [
+          {
+            "id": 14,
+            "name": "真题：机器人技术",
+            "url": "http://www.hunanie.com/nr.jsp?_reqArgs=%7B%22args%22%3A%7B%22groupId%22%3A14%2C%22jpt%22%3A4%7D%2C%22type%22%3A32%7D"
+          }
+        ]
+      },
+      {
+        "pictureId": "",
+        "id": 111,
+        "imgPath": "//0.ss.508sys.com/image/rimage/fromSite/default/noimage.jpg",
+        "imgWidth": 0,
+        "imgHeight": 0,
+        "title": "2021年机器人技术等级考试——真题（3月理论）",
+        "summary": "",
+        "url": "http://www.hunanie.com/nd.jsp?id=111",
+        "ndReqArgs": "{\"args\":{\"id\":111,\"fromMid\":3,\"groupId\":14},\"type\":31}",
+        "flag": 1024,
+        "groupIds": [
+          14
+        ],
+        "date": 1617262620000,
+        "dateStr": "2021-04-01",
+        "top": 0,
+        "views": 163,
+        "publishRegularly": true,
+        "authStatus": 0,
+        "subTitle": "",
+        "groups": [
+          {
+            "id": 14,
+            "name": "真题：机器人技术",
+            "url": "http://www.hunanie.com/nr.jsp?_reqArgs=%7B%22args%22%3A%7B%22groupId%22%3A14%2C%22jpt%22%3A4%7D%2C%22type%22%3A32%7D"
+          }
+        ]
+      },
+      {
+        "pictureId": "",
+        "id": 110,
+        "imgPath": "//0.ss.508sys.com/image/rimage/fromSite/default/noimage.jpg",
+        "imgWidth": 0,
+        "imgHeight": 0,
+        "title": "2021年机器人技术等级考试——真题（3月实操）",
+        "summary": "",
+        "url": "http://www.hunanie.com/nd.jsp?id=110",
+        "ndReqArgs": "{\"args\":{\"id\":110,\"fromMid\":3,\"groupId\":14},\"type\":31}",
+        "flag": 1024,
+        "groupIds": [
+          14
+        ],
+        "date": 1617262560000,
+        "dateStr": "2021-04-01",
+        "top": 0,
+        "views": 168,
+        "publishRegularly": true,
+        "authStatus": 0,
+        "subTitle": "",
+        "groups": [
+          {
+            "id": 14,
+            "name": "真题：机器人技术",
+            "url": "http://www.hunanie.com/nr.jsp?_reqArgs=%7B%22args%22%3A%7B%22groupId%22%3A14%2C%22jpt%22%3A4%7D%2C%22type%22%3A32%7D"
+          }
+        ]
+      }
+    ],
+    "total": 39
+  },
+  {
+    "rt": 0,
+    "success": true,
+    "msg": "",
+    "list": [
+      {
+        "pictureId": "",
+        "id": 109,
+        "imgPath": "//0.ss.508sys.com/image/rimage/fromSite/default/noimage.jpg",
+        "imgWidth": 0,
+        "imgHeight": 0,
+        "title": "2020年机器人技术等级考试——真题（12月）",
+        "summary": "",
+        "url": "http://www.hunanie.com/nd.jsp?id=109",
+        "ndReqArgs": "{\"args\":{\"id\":109,\"fromMid\":3,\"groupId\":14},\"type\":31}",
+        "flag": 1024,
+        "groupIds": [
+          14
+        ],
+        "date": 1609400100000,
+        "dateStr": "2020-12-31",
+        "top": 0,
+        "views": 165,
+        "publishRegularly": true,
+        "authStatus": 0,
+        "subTitle": "",
+        "groups": [
+          {
+            "id": 14,
+            "name": "真题：机器人技术",
+            "url": "http://www.hunanie.com/nr.jsp?_reqArgs=%7B%22args%22%3A%7B%22groupId%22%3A14%2C%22jpt%22%3A4%7D%2C%22type%22%3A32%7D"
+          }
+        ]
+      },
+      {
+        "pictureId": "",
+        "id": 108,
+        "imgPath": "//0.ss.508sys.com/image/rimage/fromSite/default/noimage.jpg",
+        "imgWidth": 0,
+        "imgHeight": 0,
+        "title": "2020年机器人技术等级考试——真题（9月）",
+        "summary": "",
+        "url": "http://www.hunanie.com/nd.jsp?id=108",
+        "ndReqArgs": "{\"args\":{\"id\":108,\"fromMid\":3,\"groupId\":14},\"type\":31}",
+        "flag": 1024,
+        "groupIds": [
+          14
+        ],
+        "date": 1601537640000,
+        "dateStr": "2020-10-01",
+        "top": 0,
+        "views": 180,
+        "publishRegularly": true,
+        "authStatus": 0,
+        "subTitle": "",
+        "groups": [
+          {
+            "id": 14,
+            "name": "真题：机器人技术",
+            "url": "http://www.hunanie.com/nr.jsp?_reqArgs=%7B%22args%22%3A%7B%22groupId%22%3A14%2C%22jpt%22%3A4%7D%2C%22type%22%3A32%7D"
+          }
+        ]
+      },
+      {
+        "pictureId": "",
+        "id": 107,
+        "imgPath": "//0.ss.508sys.com/image/rimage/fromSite/default/noimage.jpg",
+        "imgWidth": 0,
+        "imgHeight": 0,
+        "title": "2020年机器人技术等级考试——真题（6月）",
+        "summary": "",
+        "url": "http://www.hunanie.com/nd.jsp?id=107",
+        "ndReqArgs": "{\"args\":{\"id\":107,\"fromMid\":3,\"groupId\":14},\"type\":31}",
+        "flag": 1024,
+        "groupIds": [
+          14
+        ],
+        "date": 1593588720000,
+        "dateStr": "2020-07-01",
+        "top": 0,
+        "views": 172,
+        "publishRegularly": true,
+        "authStatus": 0,
+        "subTitle": "",
+        "groups": [
+          {
+            "id": 14,
+            "name": "真题：机器人技术",
+            "url": "http://www.hunanie.com/nr.jsp?_reqArgs=%7B%22args%22%3A%7B%22groupId%22%3A14%2C%22jpt%22%3A4%7D%2C%22type%22%3A32%7D"
+          }
+        ]
+      },
+      {
+        "pictureId": "",
+        "id": 93,
+        "imgPath": "//0.ss.508sys.com/image/rimage/fromSite/default/noimage.jpg",
+        "imgWidth": 0,
+        "imgHeight": 0,
+        "title": "全国青少年机器人技术等级考试标准",
+        "summary": "全国青少年机器人技术等级考试标准1-8级-20191230-v3.0.3.pdf",
+        "url": "http://www.hunanie.com/nd.jsp?id=93",
+        "ndReqArgs": "{\"args\":{\"id\":93,\"fromMid\":3,\"groupId\":14},\"type\":31}",
+        "flag": 1024,
+        "groupIds": [
+          19,
+          14
+        ],
+        "date": 1577713620000,
+        "dateStr": "2019-12-30",
+        "top": 0,
+        "views": 264,
+        "publishRegularly": true,
+        "authStatus": 0,
+        "subTitle": "",
+        "groups": [
+          {
+            "id": 14,
+            "name": "真题：机器人技术",
+            "url": "http://www.hunanie.com/nr.jsp?_reqArgs=%7B%22args%22%3A%7B%22groupId%22%3A14%2C%22jpt%22%3A4%7D%2C%22type%22%3A32%7D"
+          },
+          {
+            "id": 19,
+            "name": "考试标准",
+            "url": "http://www.hunanie.com/nr.jsp?_reqArgs=%7B%22args%22%3A%7B%22groupId%22%3A19%2C%22jpt%22%3A4%7D%2C%22type%22%3A32%7D"
+          }
+        ]
+      },
+      {
+        "pictureId": "",
+        "id": 106,
+        "imgPath": "//0.ss.508sys.com/image/rimage/fromSite/default/noimage.jpg",
+        "imgWidth": 0,
+        "imgHeight": 0,
+        "title": "2019年机器人技术等级考试——真题（12月）",
+        "summary": "",
+        "url": "http://www.hunanie.com/nd.jsp?id=106",
+        "ndReqArgs": "{\"args\":{\"id\":106,\"fromMid\":3,\"groupId\":14},\"type\":31}",
+        "flag": 1024,
+        "groupIds": [
+          14
+        ],
+        "date": 1577691000000,
+        "dateStr": "2019-12-30",
+        "top": 0,
+        "views": 151,
+        "publishRegularly": true,
+        "authStatus": 0,
+        "subTitle": "",
+        "groups": [
+          {
+            "id": 14,
+            "name": "真题：机器人技术",
+            "url": "http://www.hunanie.com/nr.jsp?_reqArgs=%7B%22args%22%3A%7B%22groupId%22%3A14%2C%22jpt%22%3A4%7D%2C%22type%22%3A32%7D"
+          }
+        ]
+      },
+      {
+        "pictureId": "",
+        "id": 105,
+        "imgPath": "//0.ss.508sys.com/image/rimage/fromSite/default/noimage.jpg",
+        "imgWidth": 0,
+        "imgHeight": 0,
+        "title": "2019年机器人技术等级考试——真题（9月）",
+        "summary": "",
+        "url": "http://www.hunanie.com/nd.jsp?id=105",
+        "ndReqArgs": "{\"args\":{\"id\":105,\"fromMid\":3,\"groupId\":14},\"type\":31}",
+        "flag": 1024,
+        "groupIds": [
+          14
+        ],
+        "date": 1569914940000,
+        "dateStr": "2019-10-01",
+        "top": 0,
+        "views": 142,
+        "publishRegularly": true,
+        "authStatus": 0,
+        "subTitle": "",
+        "groups": [
+          {
+            "id": 14,
+            "name": "真题：机器人技术",
+            "url": "http://www.hunanie.com/nr.jsp?_reqArgs=%7B%22args%22%3A%7B%22groupId%22%3A14%2C%22jpt%22%3A4%7D%2C%22type%22%3A32%7D"
+          }
+        ]
+      },
+      {
+        "pictureId": "",
+        "id": 104,
+        "imgPath": "//0.ss.508sys.com/image/rimage/fromSite/default/noimage.jpg",
+        "imgWidth": 0,
+        "imgHeight": 0,
+        "title": "2019年机器人技术等级考试——真题（3月）",
+        "summary": "",
+        "url": "http://www.hunanie.com/nd.jsp?id=104",
+        "ndReqArgs": "{\"args\":{\"id\":104,\"fromMid\":3,\"groupId\":14},\"type\":31}",
+        "flag": 1024,
+        "groupIds": [
+          14
+        ],
+        "date": 1554103620000,
+        "dateStr": "2019-04-01",
+        "top": 0,
+        "views": 149,
+        "publishRegularly": true,
+        "authStatus": 0,
+        "subTitle": "",
+        "groups": [
+          {
+            "id": 14,
+            "name": "真题：机器人技术",
+            "url": "http://www.hunanie.com/nr.jsp?_reqArgs=%7B%22args%22%3A%7B%22groupId%22%3A14%2C%22jpt%22%3A4%7D%2C%22type%22%3A32%7D"
+          }
+        ]
+      },
+      {
+        "pictureId": "",
+        "id": 103,
+        "imgPath": "//0.ss.508sys.com/image/rimage/fromSite/default/noimage.jpg",
+        "imgWidth": 0,
+        "imgHeight": 0,
+        "title": "2018年机器人技术等级考试——真题",
+        "summary": "",
+        "url": "http://www.hunanie.com/nd.jsp?id=103",
+        "ndReqArgs": "{\"args\":{\"id\":103,\"fromMid\":3,\"groupId\":14},\"type\":31}",
+        "flag": 1024,
+        "groupIds": [
+          14
+        ],
+        "date": 1546313880000,
+        "dateStr": "2019-01-01",
+        "top": 0,
+        "views": 134,
+        "publishRegularly": true,
+        "authStatus": 0,
+        "subTitle": "",
+        "groups": [
+          {
+            "id": 14,
+            "name": "真题：机器人技术",
+            "url": "http://www.hunanie.com/nr.jsp?_reqArgs=%7B%22args%22%3A%7B%22groupId%22%3A14%2C%22jpt%22%3A4%7D%2C%22type%22%3A32%7D"
+          }
+        ]
+      },
+      {
+        "pictureId": "",
+        "id": 102,
+        "imgPath": "//0.ss.508sys.com/image/rimage/fromSite/default/noimage.jpg",
+        "imgWidth": 0,
+        "imgHeight": 0,
+        "title": "2017年机器人技术等级考试——真题",
+        "summary": "",
+        "url": "http://www.hunanie.com/nd.jsp?id=102",
+        "ndReqArgs": "{\"args\":{\"id\":102,\"fromMid\":3,\"groupId\":14},\"type\":31}",
+        "flag": 1024,
+        "groupIds": [
+          14
+        ],
+        "date": 1546304040000,
+        "dateStr": "2019-01-01",
+        "top": 0,
+        "views": 137,
+        "publishRegularly": true,
+        "authStatus": 0,
+        "subTitle": "",
+        "groups": [
+          {
+            "id": 14,
+            "name": "真题：机器人技术",
+            "url": "http://www.hunanie.com/nr.jsp?_reqArgs=%7B%22args%22%3A%7B%22groupId%22%3A14%2C%22jpt%22%3A4%7D%2C%22type%22%3A32%7D"
+          }
+        ]
+      }
+    ],
+    "total": 39
+  },
+  {
+    "success": true,
+    "list": [
+      {
+        "title": "2025年图形化（Scratch）——真题（03月）",
+        "dateStr": "2025-04-11",
+        "url": "http://www.hunanie.com/nd.jsp?id=280"
+      },
+      {
+        "title": "2024年图形化（Scratch）——真题（12月）",
+        "dateStr": "2025-02-21",
+        "url": "http://www.hunanie.com/nd.jsp?id=270"
+      },
+      {
+        "title": "2024年图形化（Scratch）——真题（09月）",
+        "dateStr": "2024-11-13",
+        "url": "http://www.hunanie.com/nd.jsp?id=238"
+      },
+      {
+        "title": "2024年图形化（Scratch）——真题（06月）",
+        "dateStr": "2024-09-02",
+        "url": "http://www.hunanie.com/nd.jsp?id=221"
+      },
+      {
+        "title": "2024年图形化（Scratch）——真题（03月）",
+        "dateStr": "2024-08-01",
+        "url": "http://www.hunanie.com/nd.jsp?id=199"
+      },
+      {
+        "title": "2023年图形化（Scratch）——真题（12月）",
+        "dateStr": "2023-12-29",
+        "url": "http://www.hunanie.com/nd.jsp?id=151"
+      },
+      {
+        "title": "2023年图形化（Scratch）——真题（9月）",
+        "dateStr": "2023-10-09",
+        "url": "http://www.hunanie.com/nd.jsp?id=150"
+      },
+      {
+        "title": "2023年图形化（Scratch）——真题（6月）",
+        "dateStr": "2023-07-01",
+        "url": "http://www.hunanie.com/nd.jsp?id=149"
+      },
+      {
+        "title": "2023年图形化（Scratch）——真题（3月）",
+        "dateStr": "2023-04-01",
+        "url": "http://www.hunanie.com/nd.jsp?id=148"
+      },
+      {
+        "title": "2022年图形化（Scratch）——真题（12月）",
+        "dateStr": "2022-12-30",
+        "url": "http://www.hunanie.com/nd.jsp?id=147"
+      }
+    ],
+    "source": "HTML_Scrape"
+  },
+  {
+    "rt": 0,
+    "success": true,
+    "msg": "",
+    "list": [
+      {
+        "pictureId": "",
+        "id": 146,
+        "imgPath": "//0.ss.508sys.com/image/rimage/fromSite/default/noimage.jpg",
+        "imgWidth": 0,
+        "imgHeight": 0,
+        "title": "2022年图形化（Scratch）——真题（9月）",
+        "summary": "",
+        "url": "http://www.hunanie.com/nd.jsp?id=146",
+        "ndReqArgs": "{\"args\":{\"id\":146,\"fromMid\":3,\"groupId\":15},\"type\":31}",
+        "flag": 1024,
+        "groupIds": [
+          15
+        ],
+        "date": 1664619360000,
+        "dateStr": "2022-10-01",
+        "top": 0,
+        "views": 377,
+        "publishRegularly": true,
+        "authStatus": 0,
+        "subTitle": "",
+        "groups": [
+          {
+            "id": 15,
+            "name": "真题：软件编程（图形化）",
+            "url": "http://www.hunanie.com/nr.jsp?_reqArgs=%7B%22args%22%3A%7B%22groupId%22%3A15%2C%22jpt%22%3A4%7D%2C%22type%22%3A32%7D"
+          }
+        ]
+      },
+      {
+        "pictureId": "",
+        "id": 145,
+        "imgPath": "//0.ss.508sys.com/image/rimage/fromSite/default/noimage.jpg",
+        "imgWidth": 0,
+        "imgHeight": 0,
+        "title": "2022年图形化（Scratch）——真题（6月）",
+        "summary": "",
+        "url": "http://www.hunanie.com/nd.jsp?id=145",
+        "ndReqArgs": "{\"args\":{\"id\":145,\"fromMid\":3,\"groupId\":15},\"type\":31}",
+        "flag": 1024,
+        "groupIds": [
+          15
+        ],
+        "date": 1656670500000,
+        "dateStr": "2022-07-01",
+        "top": 0,
+        "views": 330,
+        "publishRegularly": true,
+        "authStatus": 0,
+        "subTitle": "",
+        "groups": [
+          {
+            "id": 15,
+            "name": "真题：软件编程（图形化）",
+            "url": "http://www.hunanie.com/nr.jsp?_reqArgs=%7B%22args%22%3A%7B%22groupId%22%3A15%2C%22jpt%22%3A4%7D%2C%22type%22%3A32%7D"
+          }
+        ]
+      },
+      {
+        "pictureId": "",
+        "id": 144,
+        "imgPath": "//0.ss.508sys.com/image/rimage/fromSite/default/noimage.jpg",
+        "imgWidth": 0,
+        "imgHeight": 0,
+        "title": "2022年图形化（Scratch）——真题（3月）",
+        "summary": "",
+        "url": "http://www.hunanie.com/nd.jsp?id=144",
+        "ndReqArgs": "{\"args\":{\"id\":144,\"fromMid\":3,\"groupId\":15},\"type\":31}",
+        "flag": 1024,
+        "groupIds": [
+          15
+        ],
+        "date": 1648808040000,
+        "dateStr": "2022-04-01",
+        "top": 0,
+        "views": 306,
+        "publishRegularly": true,
+        "authStatus": 0,
+        "subTitle": "",
+        "groups": [
+          {
+            "id": 15,
+            "name": "真题：软件编程（图形化）",
+            "url": "http://www.hunanie.com/nr.jsp?_reqArgs=%7B%22args%22%3A%7B%22groupId%22%3A15%2C%22jpt%22%3A4%7D%2C%22type%22%3A32%7D"
+          }
+        ]
+      },
+      {
+        "pictureId": "",
+        "id": 143,
+        "imgPath": "//0.ss.508sys.com/image/rimage/fromSite/default/noimage.jpg",
+        "imgWidth": 0,
+        "imgHeight": 0,
+        "title": "2021年图形化（Scratch）——真题（12月）",
+        "summary": "",
+        "url": "http://www.hunanie.com/nd.jsp?id=143",
+        "ndReqArgs": "{\"args\":{\"id\":143,\"fromMid\":3,\"groupId\":15},\"type\":31}",
+        "flag": 1024,
+        "groupIds": [
+          15
+        ],
+        "date": 1640945580000,
+        "dateStr": "2021-12-31",
+        "top": 0,
+        "views": 273,
+        "publishRegularly": true,
+        "authStatus": 0,
+        "subTitle": "",
+        "groups": [
+          {
+            "id": 15,
+            "name": "真题：软件编程（图形化）",
+            "url": "http://www.hunanie.com/nr.jsp?_reqArgs=%7B%22args%22%3A%7B%22groupId%22%3A15%2C%22jpt%22%3A4%7D%2C%22type%22%3A32%7D"
+          }
+        ]
+      },
+      {
+        "pictureId": "",
+        "id": 142,
+        "imgPath": "//0.ss.508sys.com/image/rimage/fromSite/default/noimage.jpg",
+        "imgWidth": 0,
+        "imgHeight": 0,
+        "title": "2021年图形化（Scratch）——真题（9月）",
+        "summary": "",
+        "url": "http://www.hunanie.com/nd.jsp?id=142",
+        "ndReqArgs": "{\"args\":{\"id\":142,\"fromMid\":3,\"groupId\":15},\"type\":31}",
+        "flag": 1024,
+        "groupIds": [
+          15
+        ],
+        "date": 1633083120000,
+        "dateStr": "2021-10-01",
+        "top": 0,
+        "views": 216,
+        "publishRegularly": true,
+        "authStatus": 0,
+        "subTitle": "",
+        "groups": [
+          {
+            "id": 15,
+            "name": "真题：软件编程（图形化）",
+            "url": "http://www.hunanie.com/nr.jsp?_reqArgs=%7B%22args%22%3A%7B%22groupId%22%3A15%2C%22jpt%22%3A4%7D%2C%22type%22%3A32%7D"
+          }
+        ]
+      },
+      {
+        "pictureId": "",
+        "id": 141,
+        "imgPath": "//0.ss.508sys.com/image/rimage/fromSite/default/noimage.jpg",
+        "imgWidth": 0,
+        "imgHeight": 0,
+        "title": "2021年图形化（Scratch）——真题（6月）",
+        "summary": "",
+        "url": "http://www.hunanie.com/nd.jsp?id=141",
+        "ndReqArgs": "{\"args\":{\"id\":141,\"fromMid\":3,\"groupId\":15},\"type\":31}",
+        "flag": 1024,
+        "groupIds": [
+          15
+        ],
+        "date": 1625134320000,
+        "dateStr": "2021-07-01",
+        "top": 0,
+        "views": 217,
+        "publishRegularly": true,
+        "authStatus": 0,
+        "subTitle": "",
+        "groups": [
+          {
+            "id": 15,
+            "name": "真题：软件编程（图形化）",
+            "url": "http://www.hunanie.com/nr.jsp?_reqArgs=%7B%22args%22%3A%7B%22groupId%22%3A15%2C%22jpt%22%3A4%7D%2C%22type%22%3A32%7D"
+          }
+        ]
+      },
+      {
+        "pictureId": "",
+        "id": 140,
+        "imgPath": "//0.ss.508sys.com/image/rimage/fromSite/default/noimage.jpg",
+        "imgWidth": 0,
+        "imgHeight": 0,
+        "title": "2021年图形化（Scratch）——真题（3月）",
+        "summary": "",
+        "url": "http://www.hunanie.com/nd.jsp?id=140",
+        "ndReqArgs": "{\"args\":{\"id\":140,\"fromMid\":3,\"groupId\":15},\"type\":31}",
+        "flag": 1024,
+        "groupIds": [
+          15
+        ],
+        "date": 1617271800000,
+        "dateStr": "2021-04-01",
+        "top": 0,
+        "views": 272,
+        "publishRegularly": true,
+        "authStatus": 0,
+        "subTitle": "",
+        "groups": [
+          {
+            "id": 15,
+            "name": "真题：软件编程（图形化）",
+            "url": "http://www.hunanie.com/nr.jsp?_reqArgs=%7B%22args%22%3A%7B%22groupId%22%3A15%2C%22jpt%22%3A4%7D%2C%22type%22%3A32%7D"
+          }
+        ]
+      },
+      {
+        "pictureId": "",
+        "id": 139,
+        "imgPath": "//0.ss.508sys.com/image/rimage/fromSite/default/noimage.jpg",
+        "imgWidth": 0,
+        "imgHeight": 0,
+        "title": "2020年图形化（Scratch）——真题（12月）",
+        "summary": "",
+        "url": "http://www.hunanie.com/nd.jsp?id=139",
+        "ndReqArgs": "{\"args\":{\"id\":139,\"fromMid\":3,\"groupId\":15},\"type\":31}",
+        "flag": 1024,
+        "groupIds": [
+          15
+        ],
+        "date": 1609409340000,
+        "dateStr": "2020-12-31",
+        "top": 0,
+        "views": 227,
+        "publishRegularly": true,
+        "authStatus": 0,
+        "subTitle": "",
+        "groups": [
+          {
+            "id": 15,
+            "name": "真题：软件编程（图形化）",
+            "url": "http://www.hunanie.com/nr.jsp?_reqArgs=%7B%22args%22%3A%7B%22groupId%22%3A15%2C%22jpt%22%3A4%7D%2C%22type%22%3A32%7D"
+          }
+        ]
+      },
+      {
+        "pictureId": "",
+        "id": 138,
+        "imgPath": "//0.ss.508sys.com/image/rimage/fromSite/default/noimage.jpg",
+        "imgWidth": 0,
+        "imgHeight": 0,
+        "title": "2020年图形化（Scratch）——真题（9月）",
+        "summary": "",
+        "url": "http://www.hunanie.com/nd.jsp?id=138",
+        "ndReqArgs": "{\"args\":{\"id\":138,\"fromMid\":3,\"groupId\":15},\"type\":31}",
+        "flag": 1024,
+        "groupIds": [
+          15
+        ],
+        "date": 1601546880000,
+        "dateStr": "2020-10-01",
+        "top": 0,
+        "views": 212,
+        "publishRegularly": true,
+        "authStatus": 0,
+        "subTitle": "",
+        "groups": [
+          {
+            "id": 15,
+            "name": "真题：软件编程（图形化）",
+            "url": "http://www.hunanie.com/nr.jsp?_reqArgs=%7B%22args%22%3A%7B%22groupId%22%3A15%2C%22jpt%22%3A4%7D%2C%22type%22%3A32%7D"
+          }
+        ]
+      },
+      {
+        "pictureId": "",
+        "id": 137,
+        "imgPath": "//0.ss.508sys.com/image/rimage/fromSite/default/noimage.jpg",
+        "imgWidth": 0,
+        "imgHeight": 0,
+        "title": "2020年图形化（Scratch）——真题（6月）",
+        "summary": "",
+        "url": "http://www.hunanie.com/nd.jsp?id=137",
+        "ndReqArgs": "{\"args\":{\"id\":137,\"fromMid\":3,\"groupId\":15},\"type\":31}",
+        "flag": 1024,
+        "groupIds": [
+          15
+        ],
+        "date": 1593598020000,
+        "dateStr": "2020-07-01",
+        "top": 0,
+        "views": 229,
+        "publishRegularly": true,
+        "authStatus": 0,
+        "subTitle": "",
+        "groups": [
+          {
+            "id": 15,
+            "name": "真题：软件编程（图形化）",
+            "url": "http://www.hunanie.com/nr.jsp?_reqArgs=%7B%22args%22%3A%7B%22groupId%22%3A15%2C%22jpt%22%3A4%7D%2C%22type%22%3A32%7D"
+          }
+        ]
+      }
+    ],
+    "total": 24
+  },
+  {
+    "rt": 0,
+    "success": true,
+    "msg": "",
+    "list": [
+      {
+        "pictureId": "",
+        "id": 136,
+        "imgPath": "//0.ss.508sys.com/image/rimage/fromSite/default/noimage.jpg",
+        "imgWidth": 0,
+        "imgHeight": 0,
+        "title": "2019年图形化（Scratch）——真题（12月）",
+        "summary": "",
+        "url": "http://www.hunanie.com/nd.jsp?id=136",
+        "ndReqArgs": "{\"args\":{\"id\":136,\"fromMid\":3,\"groupId\":15},\"type\":31}",
+        "flag": 1024,
+        "groupIds": [
+          15
+        ],
+        "date": 1577700360000,
+        "dateStr": "2019-12-30",
+        "top": 0,
+        "views": 248,
+        "publishRegularly": true,
+        "authStatus": 0,
+        "subTitle": "",
+        "groups": [
+          {
+            "id": 15,
+            "name": "真题：软件编程（图形化）",
+            "url": "http://www.hunanie.com/nr.jsp?_reqArgs=%7B%22args%22%3A%7B%22groupId%22%3A15%2C%22jpt%22%3A4%7D%2C%22type%22%3A32%7D"
+          }
+        ]
+      },
+      {
+        "pictureId": "",
+        "id": 135,
+        "imgPath": "//0.ss.508sys.com/image/rimage/fromSite/default/noimage.jpg",
+        "imgWidth": 0,
+        "imgHeight": 0,
+        "title": "2019年图形化（Scratch）——真题（9月）",
+        "summary": "",
+        "url": "http://www.hunanie.com/nd.jsp?id=135",
+        "ndReqArgs": "{\"args\":{\"id\":135,\"fromMid\":3,\"groupId\":15},\"type\":31}",
+        "flag": 1024,
+        "groupIds": [
+          15
+        ],
+        "date": 1569924300000,
+        "dateStr": "2019-10-01",
+        "top": 0,
+        "views": 238,
+        "publishRegularly": true,
+        "authStatus": 0,
+        "subTitle": "",
+        "groups": [
+          {
+            "id": 15,
+            "name": "真题：软件编程（图形化）",
+            "url": "http://www.hunanie.com/nr.jsp?_reqArgs=%7B%22args%22%3A%7B%22groupId%22%3A15%2C%22jpt%22%3A4%7D%2C%22type%22%3A32%7D"
+          }
+        ]
+      },
+      {
+        "pictureId": "",
+        "id": 134,
+        "imgPath": "//0.ss.508sys.com/image/rimage/fromSite/default/noimage.jpg",
+        "imgWidth": 0,
+        "imgHeight": 0,
+        "title": "2019年图形化（Scratch）——真题（6月）",
+        "summary": "",
+        "url": "http://www.hunanie.com/nd.jsp?id=134",
+        "ndReqArgs": "{\"args\":{\"id\":134,\"fromMid\":3,\"groupId\":15},\"type\":31}",
+        "flag": 1024,
+        "groupIds": [
+          15
+        ],
+        "date": 1546331820000,
+        "dateStr": "2019-01-01",
+        "top": 0,
+        "views": 252,
+        "publishRegularly": true,
+        "authStatus": 0,
+        "subTitle": "",
+        "groups": [
+          {
+            "id": 15,
+            "name": "真题：软件编程（图形化）",
+            "url": "http://www.hunanie.com/nr.jsp?_reqArgs=%7B%22args%22%3A%7B%22groupId%22%3A15%2C%22jpt%22%3A4%7D%2C%22type%22%3A32%7D"
+          }
+        ]
+      },
+      {
+        "pictureId": "",
+        "id": 88,
+        "imgPath": "//0.ss.508sys.com/image/rimage/fromSite/default/noimage.jpg",
+        "imgWidth": 0,
+        "imgHeight": 0,
+        "title": "全国青少年软件编程等级考试大纲与说明（图形化1-4级）",
+        "summary": "全国青少年软件编程等级考试大纲与说明-（图形化Scratch1级-4级）.pdf",
+        "url": "http://www.hunanie.com/nd.jsp?id=88",
+        "ndReqArgs": "{\"args\":{\"id\":88,\"fromMid\":3,\"groupId\":15},\"type\":31}",
+        "flag": 1024,
+        "groupIds": [
+          15
+        ],
+        "date": 1543671600000,
+        "dateStr": "2018-12-01",
+        "top": 0,
+        "views": 168,
+        "publishRegularly": true,
+        "authStatus": 0,
+        "subTitle": "",
+        "groups": [
+          {
+            "id": 15,
+            "name": "真题：软件编程（图形化）",
+            "url": "http://www.hunanie.com/nr.jsp?_reqArgs=%7B%22args%22%3A%7B%22groupId%22%3A15%2C%22jpt%22%3A4%7D%2C%22type%22%3A32%7D"
+          }
+        ]
+      }
+    ],
+    "total": 24
+  },
+  {
+    "success": true,
+    "list": [
+      {
+        "title": "2025年软件编程（python）——真题（03月）",
+        "dateStr": "2025-04-11",
+        "url": "http://www.hunanie.com/nd.jsp?id=281"
+      },
+      {
+        "title": "2024年软件编程（python）——真题（12月）",
+        "dateStr": "2025-02-21",
+        "url": "http://www.hunanie.com/nd.jsp?id=271"
+      },
+      {
+        "title": "2024年软件编程（python）——真题（09月）",
+        "dateStr": "2024-11-13",
+        "url": "http://www.hunanie.com/nd.jsp?id=239"
+      },
+      {
+        "title": "2024年软件编程（python）——真题（06月）",
+        "dateStr": "2024-09-02",
+        "url": "http://www.hunanie.com/nd.jsp?id=222"
+      },
+      {
+        "title": "2024年软件编程（python）——真题（03月）",
+        "dateStr": "2024-08-01",
+        "url": "http://www.hunanie.com/nd.jsp?id=200"
+      },
+      {
+        "title": "2023年软件编程（Python）——真题（12月）",
+        "dateStr": "2023-12-01",
+        "url": "http://www.hunanie.com/nd.jsp?id=167"
+      },
+      {
+        "title": "2023年软件编程（Python）——真题（09月）",
+        "dateStr": "2023-10-01",
+        "url": "http://www.hunanie.com/nd.jsp?id=166"
+      },
+      {
+        "title": "2023年软件编程（Python）——真题（06月）",
+        "dateStr": "2023-07-01",
+        "url": "http://www.hunanie.com/nd.jsp?id=165"
+      },
+      {
+        "title": "2023年软件编程（Python）——真题（03月）",
+        "dateStr": "2023-04-01",
+        "url": "http://www.hunanie.com/nd.jsp?id=164"
+      },
+      {
+        "title": "2022年软件编程（Python）——真题（12月）",
+        "dateStr": "2022-12-30",
+        "url": "http://www.hunanie.com/nd.jsp?id=163"
+      }
+    ],
+    "source": "HTML_Scrape"
+  },
+  {
+    "rt": 0,
+    "success": true,
+    "msg": "",
+    "list": [
+      {
+        "pictureId": "",
+        "id": 162,
+        "imgPath": "//0.ss.508sys.com/image/rimage/fromSite/default/noimage.jpg",
+        "imgWidth": 0,
+        "imgHeight": 0,
+        "title": "2022年软件编程（Python）——真题（09月）",
+        "summary": "",
+        "url": "http://www.hunanie.com/nd.jsp?id=162",
+        "ndReqArgs": "{\"args\":{\"id\":162,\"fromMid\":3,\"groupId\":16},\"type\":31}",
+        "flag": 1024,
+        "groupIds": [
+          16
+        ],
+        "date": 1664578140000,
+        "dateStr": "2022-10-01",
+        "top": 0,
+        "views": 212,
+        "publishRegularly": true,
+        "authStatus": 0,
+        "subTitle": "",
+        "groups": [
+          {
+            "id": 16,
+            "name": "真题：软件编程（Python）",
+            "url": "http://www.hunanie.com/nr.jsp?_reqArgs=%7B%22args%22%3A%7B%22groupId%22%3A16%2C%22jpt%22%3A4%7D%2C%22type%22%3A32%7D"
+          }
+        ]
+      },
+      {
+        "pictureId": "",
+        "id": 161,
+        "imgPath": "//0.ss.508sys.com/image/rimage/fromSite/default/noimage.jpg",
+        "imgWidth": 0,
+        "imgHeight": 0,
+        "title": "2022年软件编程（Python）——真题（06月）",
+        "summary": "",
+        "url": "http://www.hunanie.com/nd.jsp?id=161",
+        "ndReqArgs": "{\"args\":{\"id\":161,\"fromMid\":3,\"groupId\":16},\"type\":31}",
+        "flag": 1024,
+        "groupIds": [
+          16
+        ],
+        "date": 1656629280000,
+        "dateStr": "2022-07-01",
+        "top": 0,
+        "views": 188,
+        "publishRegularly": true,
+        "authStatus": 0,
+        "subTitle": "",
+        "groups": [
+          {
+            "id": 16,
+            "name": "真题：软件编程（Python）",
+            "url": "http://www.hunanie.com/nr.jsp?_reqArgs=%7B%22args%22%3A%7B%22groupId%22%3A16%2C%22jpt%22%3A4%7D%2C%22type%22%3A32%7D"
+          }
+        ]
+      },
+      {
+        "pictureId": "",
+        "id": 160,
+        "imgPath": "//0.ss.508sys.com/image/rimage/fromSite/default/noimage.jpg",
+        "imgWidth": 0,
+        "imgHeight": 0,
+        "title": "2022年软件编程（Python）——真题（03月）",
+        "summary": "",
+        "url": "http://www.hunanie.com/nd.jsp?id=160",
+        "ndReqArgs": "{\"args\":{\"id\":160,\"fromMid\":3,\"groupId\":16},\"type\":31}",
+        "flag": 1024,
+        "groupIds": [
+          16
+        ],
+        "date": 1648766880000,
+        "dateStr": "2022-04-01",
+        "top": 0,
+        "views": 193,
+        "publishRegularly": true,
+        "authStatus": 0,
+        "subTitle": "",
+        "groups": [
+          {
+            "id": 16,
+            "name": "真题：软件编程（Python）",
+            "url": "http://www.hunanie.com/nr.jsp?_reqArgs=%7B%22args%22%3A%7B%22groupId%22%3A16%2C%22jpt%22%3A4%7D%2C%22type%22%3A32%7D"
+          }
+        ]
+      },
+      {
+        "pictureId": "",
+        "id": 159,
+        "imgPath": "//0.ss.508sys.com/image/rimage/fromSite/default/noimage.jpg",
+        "imgWidth": 0,
+        "imgHeight": 0,
+        "title": "2021年软件编程（Python）——真题（12月）",
+        "summary": "",
+        "url": "http://www.hunanie.com/nd.jsp?id=159",
+        "ndReqArgs": "{\"args\":{\"id\":159,\"fromMid\":3,\"groupId\":16},\"type\":31}",
+        "flag": 1024,
+        "groupIds": [
+          16
+        ],
+        "date": 1640904420000,
+        "dateStr": "2021-12-31",
+        "top": 0,
+        "views": 166,
+        "publishRegularly": true,
+        "authStatus": 0,
+        "subTitle": "",
+        "groups": [
+          {
+            "id": 16,
+            "name": "真题：软件编程（Python）",
+            "url": "http://www.hunanie.com/nr.jsp?_reqArgs=%7B%22args%22%3A%7B%22groupId%22%3A16%2C%22jpt%22%3A4%7D%2C%22type%22%3A32%7D"
+          }
+        ]
+      },
+      {
+        "pictureId": "",
+        "id": 158,
+        "imgPath": "//0.ss.508sys.com/image/rimage/fromSite/default/noimage.jpg",
+        "imgWidth": 0,
+        "imgHeight": 0,
+        "title": "2021年软件编程（Python）——真题（09月）",
+        "summary": "",
+        "url": "http://www.hunanie.com/nd.jsp?id=158",
+        "ndReqArgs": "{\"args\":{\"id\":158,\"fromMid\":3,\"groupId\":16},\"type\":31}",
+        "flag": 1024,
+        "groupIds": [
+          16
+        ],
+        "date": 1633041960000,
+        "dateStr": "2021-10-01",
+        "top": 0,
+        "views": 134,
+        "publishRegularly": true,
+        "authStatus": 0,
+        "subTitle": "",
+        "groups": [
+          {
+            "id": 16,
+            "name": "真题：软件编程（Python）",
+            "url": "http://www.hunanie.com/nr.jsp?_reqArgs=%7B%22args%22%3A%7B%22groupId%22%3A16%2C%22jpt%22%3A4%7D%2C%22type%22%3A32%7D"
+          }
+        ]
+      },
+      {
+        "pictureId": "",
+        "id": 157,
+        "imgPath": "//0.ss.508sys.com/image/rimage/fromSite/default/noimage.jpg",
+        "imgWidth": 0,
+        "imgHeight": 0,
+        "title": "2021年软件编程（Python）——真题（06月）",
+        "summary": "",
+        "url": "http://www.hunanie.com/nd.jsp?id=157",
+        "ndReqArgs": "{\"args\":{\"id\":157,\"fromMid\":3,\"groupId\":16},\"type\":31}",
+        "flag": 1024,
+        "groupIds": [
+          16
+        ],
+        "date": 1625093160000,
+        "dateStr": "2021-07-01",
+        "top": 0,
+        "views": 137,
+        "publishRegularly": true,
+        "authStatus": 0,
+        "subTitle": "",
+        "groups": [
+          {
+            "id": 16,
+            "name": "真题：软件编程（Python）",
+            "url": "http://www.hunanie.com/nr.jsp?_reqArgs=%7B%22args%22%3A%7B%22groupId%22%3A16%2C%22jpt%22%3A4%7D%2C%22type%22%3A32%7D"
+          }
+        ]
+      },
+      {
+        "pictureId": "",
+        "id": 156,
+        "imgPath": "//0.ss.508sys.com/image/rimage/fromSite/default/noimage.jpg",
+        "imgWidth": 0,
+        "imgHeight": 0,
+        "title": "2021年软件编程（Python）——真题（03月）",
+        "summary": "",
+        "url": "http://www.hunanie.com/nd.jsp?id=156",
+        "ndReqArgs": "{\"args\":{\"id\":156,\"fromMid\":3,\"groupId\":16},\"type\":31}",
+        "flag": 1024,
+        "groupIds": [
+          16
+        ],
+        "date": 1617230460000,
+        "dateStr": "2021-04-01",
+        "top": 0,
+        "views": 143,
+        "publishRegularly": true,
+        "authStatus": 0,
+        "subTitle": "",
+        "groups": [
+          {
+            "id": 16,
+            "name": "真题：软件编程（Python）",
+            "url": "http://www.hunanie.com/nr.jsp?_reqArgs=%7B%22args%22%3A%7B%22groupId%22%3A16%2C%22jpt%22%3A4%7D%2C%22type%22%3A32%7D"
+          }
+        ]
+      },
+      {
+        "pictureId": "",
+        "id": 155,
+        "imgPath": "//0.ss.508sys.com/image/rimage/fromSite/default/noimage.jpg",
+        "imgWidth": 0,
+        "imgHeight": 0,
+        "title": "2020年软件编程（Python）——真题（12月）",
+        "summary": "",
+        "url": "http://www.hunanie.com/nd.jsp?id=155",
+        "ndReqArgs": "{\"args\":{\"id\":155,\"fromMid\":3,\"groupId\":16},\"type\":31}",
+        "flag": 1024,
+        "groupIds": [
+          16
+        ],
+        "date": 1609368000000,
+        "dateStr": "2020-12-31",
+        "top": 0,
+        "views": 134,
+        "publishRegularly": true,
+        "authStatus": 0,
+        "subTitle": "",
+        "groups": [
+          {
+            "id": 16,
+            "name": "真题：软件编程（Python）",
+            "url": "http://www.hunanie.com/nr.jsp?_reqArgs=%7B%22args%22%3A%7B%22groupId%22%3A16%2C%22jpt%22%3A4%7D%2C%22type%22%3A32%7D"
+          }
+        ]
+      },
+      {
+        "pictureId": "",
+        "id": 154,
+        "imgPath": "//0.ss.508sys.com/image/rimage/fromSite/default/noimage.jpg",
+        "imgWidth": 0,
+        "imgHeight": 0,
+        "title": "2020年软件编程（Python）——真题（09月）",
+        "summary": "",
+        "url": "http://www.hunanie.com/nd.jsp?id=154",
+        "ndReqArgs": "{\"args\":{\"id\":154,\"fromMid\":3,\"groupId\":16},\"type\":31}",
+        "flag": 1024,
+        "groupIds": [
+          16
+        ],
+        "date": 1601505540000,
+        "dateStr": "2020-10-01",
+        "top": 0,
+        "views": 144,
+        "publishRegularly": true,
+        "authStatus": 0,
+        "subTitle": "",
+        "groups": [
+          {
+            "id": 16,
+            "name": "真题：软件编程（Python）",
+            "url": "http://www.hunanie.com/nr.jsp?_reqArgs=%7B%22args%22%3A%7B%22groupId%22%3A16%2C%22jpt%22%3A4%7D%2C%22type%22%3A32%7D"
+          }
+        ]
+      },
+      {
+        "pictureId": "",
+        "id": 153,
+        "imgPath": "//0.ss.508sys.com/image/rimage/fromSite/default/noimage.jpg",
+        "imgWidth": 0,
+        "imgHeight": 0,
+        "title": "2020年软件编程（Python）——真题（06月）",
+        "summary": "",
+        "url": "http://www.hunanie.com/nd.jsp?id=153",
+        "ndReqArgs": "{\"args\":{\"id\":153,\"fromMid\":3,\"groupId\":16},\"type\":31}",
+        "flag": 1024,
+        "groupIds": [
+          16
+        ],
+        "date": 1593556740000,
+        "dateStr": "2020-07-01",
+        "top": 0,
+        "views": 181,
+        "publishRegularly": true,
+        "authStatus": 0,
+        "subTitle": "",
+        "groups": [
+          {
+            "id": 16,
+            "name": "真题：软件编程（Python）",
+            "url": "http://www.hunanie.com/nr.jsp?_reqArgs=%7B%22args%22%3A%7B%22groupId%22%3A16%2C%22jpt%22%3A4%7D%2C%22type%22%3A32%7D"
+          }
+        ]
+      }
+    ],
+    "total": 22
+  },
+  {
+    "rt": 0,
+    "success": true,
+    "msg": "",
+    "list": [
+      {
+        "pictureId": "",
+        "id": 152,
+        "imgPath": "//0.ss.508sys.com/image/rimage/fromSite/default/noimage.jpg",
+        "imgWidth": 0,
+        "imgHeight": 0,
+        "title": "2019年软件编程（Python）——真题（12月）",
+        "summary": "",
+        "url": "http://www.hunanie.com/nd.jsp?id=152",
+        "ndReqArgs": "{\"args\":{\"id\":152,\"fromMid\":3,\"groupId\":16},\"type\":31}",
+        "flag": 1024,
+        "groupIds": [
+          16
+        ],
+        "date": 1577701260000,
+        "dateStr": "2019-12-30",
+        "top": 0,
+        "views": 182,
+        "publishRegularly": true,
+        "authStatus": 0,
+        "subTitle": "",
+        "groups": [
+          {
+            "id": 16,
+            "name": "真题：软件编程（Python）",
+            "url": "http://www.hunanie.com/nr.jsp?_reqArgs=%7B%22args%22%3A%7B%22groupId%22%3A16%2C%22jpt%22%3A4%7D%2C%22type%22%3A32%7D"
+          }
+        ]
+      },
+      {
+        "pictureId": "",
+        "id": 90,
+        "imgPath": "//0.ss.508sys.com/image/rimage/fromSite/default/noimage.jpg",
+        "imgWidth": 0,
+        "imgHeight": 0,
+        "title": "全国青少年软件编程等级考试标准 (Python 语言)",
+        "summary": "全国青少年软件编程等级考试标准（Python+1级-6级）-20191030.pdf",
+        "url": "http://www.hunanie.com/nd.jsp?id=90",
+        "ndReqArgs": "{\"args\":{\"id\":90,\"fromMid\":3,\"groupId\":16},\"type\":31}",
+        "flag": 1024,
+        "groupIds": [
+          16
+        ],
+        "date": 1572442980000,
+        "dateStr": "2019-10-30",
+        "top": 0,
+        "views": 121,
+        "publishRegularly": true,
+        "authStatus": 0,
+        "subTitle": "",
+        "groups": [
+          {
+            "id": 16,
+            "name": "真题：软件编程（Python）",
+            "url": "http://www.hunanie.com/nr.jsp?_reqArgs=%7B%22args%22%3A%7B%22groupId%22%3A16%2C%22jpt%22%3A4%7D%2C%22type%22%3A32%7D"
+          }
+        ]
+      }
+    ],
+    "total": 22
+  },
+  {
+    "success": true,
+    "list": [
+      {
+        "title": "2025年软件编程（C语言）——真题（03月）",
+        "dateStr": "2025-04-11",
+        "url": "http://www.hunanie.com/nd.jsp?id=282"
+      },
+      {
+        "title": "2024年软件编程（C语言）——真题（12月）",
+        "dateStr": "2025-02-21",
+        "url": "http://www.hunanie.com/nd.jsp?id=272"
+      },
+      {
+        "title": "2024年软件编程（C语言）——真题（09月）",
+        "dateStr": "2024-11-13",
+        "url": "http://www.hunanie.com/nd.jsp?id=240"
+      },
+      {
+        "title": "2024年软件编程（C语言）——真题（06月）",
+        "dateStr": "2024-09-02",
+        "url": "http://www.hunanie.com/nd.jsp?id=223"
+      },
+      {
+        "title": "2024年软件编程（C语言）——真题（03月）",
+        "dateStr": "2024-08-01",
+        "url": "http://www.hunanie.com/nd.jsp?id=201"
+      },
+      {
+        "title": "2023年软件编程（C语言）——真题（12月）",
+        "dateStr": "2023-12-29",
+        "url": "http://www.hunanie.com/nd.jsp?id=183"
+      },
+      {
+        "title": "2023年软件编程（C语言）——真题（09月）",
+        "dateStr": "2023-10-09",
+        "url": "http://www.hunanie.com/nd.jsp?id=182"
+      },
+      {
+        "title": "2023年软件编程（C语言）——真题（06月）",
+        "dateStr": "2023-07-01",
+        "url": "http://www.hunanie.com/nd.jsp?id=181"
+      },
+      {
+        "title": "2023年软件编程（C语言）——真题（03月）",
+        "dateStr": "2023-04-01",
+        "url": "http://www.hunanie.com/nd.jsp?id=180"
+      },
+      {
+        "title": "2022年软件编程（C语言）——真题（12月）",
+        "dateStr": "2022-12-30",
+        "url": "http://www.hunanie.com/nd.jsp?id=179"
+      }
+    ],
+    "source": "HTML_Scrape"
+  },
+  {
+    "rt": 0,
+    "success": true,
+    "msg": "",
+    "list": [
+      {
+        "pictureId": "",
+        "id": 178,
+        "imgPath": "//0.ss.508sys.com/image/rimage/fromSite/default/noimage.jpg",
+        "imgWidth": 0,
+        "imgHeight": 0,
+        "title": "2022年软件编程（C语言）——真题（09月）",
+        "summary": "",
+        "url": "http://www.hunanie.com/nd.jsp?id=178",
+        "ndReqArgs": "{\"args\":{\"id\":178,\"fromMid\":3,\"groupId\":17},\"type\":31}",
+        "flag": 1024,
+        "groupIds": [
+          17
+        ],
+        "date": 1664580420000,
+        "dateStr": "2022-10-01",
+        "top": 0,
+        "views": 100,
+        "publishRegularly": true,
+        "authStatus": 0,
+        "subTitle": "",
+        "groups": [
+          {
+            "id": 17,
+            "name": "真题：软件编程（C语言）",
+            "url": "http://www.hunanie.com/nr.jsp?_reqArgs=%7B%22args%22%3A%7B%22groupId%22%3A17%2C%22jpt%22%3A4%7D%2C%22type%22%3A32%7D"
+          }
+        ]
+      },
+      {
+        "pictureId": "",
+        "id": 177,
+        "imgPath": "//0.ss.508sys.com/image/rimage/fromSite/default/noimage.jpg",
+        "imgWidth": 0,
+        "imgHeight": 0,
+        "title": "2022年软件编程（C语言）——真题（06月）",
+        "summary": "",
+        "url": "http://www.hunanie.com/nd.jsp?id=177",
+        "ndReqArgs": "{\"args\":{\"id\":177,\"fromMid\":3,\"groupId\":17},\"type\":31}",
+        "flag": 1024,
+        "groupIds": [
+          17
+        ],
+        "date": 1656631620000,
+        "dateStr": "2022-07-01",
+        "top": 0,
+        "views": 109,
+        "publishRegularly": true,
+        "authStatus": 0,
+        "subTitle": "",
+        "groups": [
+          {
+            "id": 17,
+            "name": "真题：软件编程（C语言）",
+            "url": "http://www.hunanie.com/nr.jsp?_reqArgs=%7B%22args%22%3A%7B%22groupId%22%3A17%2C%22jpt%22%3A4%7D%2C%22type%22%3A32%7D"
+          }
+        ]
+      },
+      {
+        "pictureId": "",
+        "id": 176,
+        "imgPath": "//0.ss.508sys.com/image/rimage/fromSite/default/noimage.jpg",
+        "imgWidth": 0,
+        "imgHeight": 0,
+        "title": "2022年软件编程（C语言）——真题（03月）",
+        "summary": "",
+        "url": "http://www.hunanie.com/nd.jsp?id=176",
+        "ndReqArgs": "{\"args\":{\"id\":176,\"fromMid\":3,\"groupId\":17},\"type\":31}",
+        "flag": 1024,
+        "groupIds": [
+          17
+        ],
+        "date": 1648769160000,
+        "dateStr": "2022-04-01",
+        "top": 0,
+        "views": 94,
+        "publishRegularly": true,
+        "authStatus": 0,
+        "subTitle": "",
+        "groups": [
+          {
+            "id": 17,
+            "name": "真题：软件编程（C语言）",
+            "url": "http://www.hunanie.com/nr.jsp?_reqArgs=%7B%22args%22%3A%7B%22groupId%22%3A17%2C%22jpt%22%3A4%7D%2C%22type%22%3A32%7D"
+          }
+        ]
+      },
+      {
+        "pictureId": "",
+        "id": 175,
+        "imgPath": "//0.ss.508sys.com/image/rimage/fromSite/default/noimage.jpg",
+        "imgWidth": 0,
+        "imgHeight": 0,
+        "title": "2021年软件编程（C语言）——真题（12月）",
+        "summary": "",
+        "url": "http://www.hunanie.com/nd.jsp?id=175",
+        "ndReqArgs": "{\"args\":{\"id\":175,\"fromMid\":3,\"groupId\":17},\"type\":31}",
+        "flag": 1024,
+        "groupIds": [
+          17
+        ],
+        "date": 1640906520000,
+        "dateStr": "2021-12-31",
+        "top": 0,
+        "views": 86,
+        "publishRegularly": true,
+        "authStatus": 0,
+        "subTitle": "",
+        "groups": [
+          {
+            "id": 17,
+            "name": "真题：软件编程（C语言）",
+            "url": "http://www.hunanie.com/nr.jsp?_reqArgs=%7B%22args%22%3A%7B%22groupId%22%3A17%2C%22jpt%22%3A4%7D%2C%22type%22%3A32%7D"
+          }
+        ]
+      },
+      {
+        "pictureId": "",
+        "id": 174,
+        "imgPath": "//0.ss.508sys.com/image/rimage/fromSite/default/noimage.jpg",
+        "imgWidth": 0,
+        "imgHeight": 0,
+        "title": "2021年软件编程（C语言）——真题（09月）",
+        "summary": "",
+        "url": "http://www.hunanie.com/nd.jsp?id=174",
+        "ndReqArgs": "{\"args\":{\"id\":174,\"fromMid\":3,\"groupId\":17},\"type\":31}",
+        "flag": 1024,
+        "groupIds": [
+          17
+        ],
+        "date": 1633044120000,
+        "dateStr": "2021-10-01",
+        "top": 0,
+        "views": 83,
+        "publishRegularly": true,
+        "authStatus": 0,
+        "subTitle": "",
+        "groups": [
+          {
+            "id": 17,
+            "name": "真题：软件编程（C语言）",
+            "url": "http://www.hunanie.com/nr.jsp?_reqArgs=%7B%22args%22%3A%7B%22groupId%22%3A17%2C%22jpt%22%3A4%7D%2C%22type%22%3A32%7D"
+          }
+        ]
+      },
+      {
+        "pictureId": "",
+        "id": 173,
+        "imgPath": "//0.ss.508sys.com/image/rimage/fromSite/default/noimage.jpg",
+        "imgWidth": 0,
+        "imgHeight": 0,
+        "title": "2021年软件编程（C语言）——真题（06月）",
+        "summary": "",
+        "url": "http://www.hunanie.com/nd.jsp?id=173",
+        "ndReqArgs": "{\"args\":{\"id\":173,\"fromMid\":3,\"groupId\":17},\"type\":31}",
+        "flag": 1024,
+        "groupIds": [
+          17
+        ],
+        "date": 1625095260000,
+        "dateStr": "2021-07-01",
+        "top": 0,
+        "views": 92,
+        "publishRegularly": true,
+        "authStatus": 0,
+        "subTitle": "",
+        "groups": [
+          {
+            "id": 17,
+            "name": "真题：软件编程（C语言）",
+            "url": "http://www.hunanie.com/nr.jsp?_reqArgs=%7B%22args%22%3A%7B%22groupId%22%3A17%2C%22jpt%22%3A4%7D%2C%22type%22%3A32%7D"
+          }
+        ]
+      },
+      {
+        "pictureId": "",
+        "id": 172,
+        "imgPath": "//0.ss.508sys.com/image/rimage/fromSite/default/noimage.jpg",
+        "imgWidth": 0,
+        "imgHeight": 0,
+        "title": "2021年软件编程（C语言）——真题（03月）",
+        "summary": "",
+        "url": "http://www.hunanie.com/nd.jsp?id=172",
+        "ndReqArgs": "{\"args\":{\"id\":172,\"fromMid\":3,\"groupId\":17},\"type\":31}",
+        "flag": 1024,
+        "groupIds": [
+          17
+        ],
+        "date": 1617232800000,
+        "dateStr": "2021-04-01",
+        "top": 0,
+        "views": 80,
+        "publishRegularly": true,
+        "authStatus": 0,
+        "subTitle": "",
+        "groups": [
+          {
+            "id": 17,
+            "name": "真题：软件编程（C语言）",
+            "url": "http://www.hunanie.com/nr.jsp?_reqArgs=%7B%22args%22%3A%7B%22groupId%22%3A17%2C%22jpt%22%3A4%7D%2C%22type%22%3A32%7D"
+          }
+        ]
+      },
+      {
+        "pictureId": "",
+        "id": 171,
+        "imgPath": "//0.ss.508sys.com/image/rimage/fromSite/default/noimage.jpg",
+        "imgWidth": 0,
+        "imgHeight": 0,
+        "title": "2020年软件编程（C语言）——真题（12月）",
+        "summary": "",
+        "url": "http://www.hunanie.com/nd.jsp?id=171",
+        "ndReqArgs": "{\"args\":{\"id\":171,\"fromMid\":3,\"groupId\":17},\"type\":31}",
+        "flag": 1024,
+        "groupIds": [
+          17
+        ],
+        "date": 1609370340000,
+        "dateStr": "2020-12-31",
+        "top": 0,
+        "views": 76,
+        "publishRegularly": true,
+        "authStatus": 0,
+        "subTitle": "",
+        "groups": [
+          {
+            "id": 17,
+            "name": "真题：软件编程（C语言）",
+            "url": "http://www.hunanie.com/nr.jsp?_reqArgs=%7B%22args%22%3A%7B%22groupId%22%3A17%2C%22jpt%22%3A4%7D%2C%22type%22%3A32%7D"
+          }
+        ]
+      },
+      {
+        "pictureId": "",
+        "id": 170,
+        "imgPath": "//0.ss.508sys.com/image/rimage/fromSite/default/noimage.jpg",
+        "imgWidth": 0,
+        "imgHeight": 0,
+        "title": "2020年软件编程（C语言）——真题（09月）",
+        "summary": "",
+        "url": "http://www.hunanie.com/nd.jsp?id=170",
+        "ndReqArgs": "{\"args\":{\"id\":170,\"fromMid\":3,\"groupId\":17},\"type\":31}",
+        "flag": 1024,
+        "groupIds": [
+          17
+        ],
+        "date": 1601507880000,
+        "dateStr": "2020-10-01",
+        "top": 0,
+        "views": 77,
+        "publishRegularly": true,
+        "authStatus": 0,
+        "subTitle": "",
+        "groups": [
+          {
+            "id": 17,
+            "name": "真题：软件编程（C语言）",
+            "url": "http://www.hunanie.com/nr.jsp?_reqArgs=%7B%22args%22%3A%7B%22groupId%22%3A17%2C%22jpt%22%3A4%7D%2C%22type%22%3A32%7D"
+          }
+        ]
+      },
+      {
+        "pictureId": "",
+        "id": 169,
+        "imgPath": "//0.ss.508sys.com/image/rimage/fromSite/default/noimage.jpg",
+        "imgWidth": 0,
+        "imgHeight": 0,
+        "title": "2020年软件编程（C语言）——真题（06月）",
+        "summary": "",
+        "url": "http://www.hunanie.com/nd.jsp?id=169",
+        "ndReqArgs": "{\"args\":{\"id\":169,\"fromMid\":3,\"groupId\":17},\"type\":31}",
+        "flag": 1024,
+        "groupIds": [
+          17
+        ],
+        "date": 1593559080000,
+        "dateStr": "2020-07-01",
+        "top": 0,
+        "views": 85,
+        "publishRegularly": true,
+        "authStatus": 0,
+        "subTitle": "",
+        "groups": [
+          {
+            "id": 17,
+            "name": "真题：软件编程（C语言）",
+            "url": "http://www.hunanie.com/nr.jsp?_reqArgs=%7B%22args%22%3A%7B%22groupId%22%3A17%2C%22jpt%22%3A4%7D%2C%22type%22%3A32%7D"
+          }
+        ]
+      }
+    ],
+    "total": 22
+  },
+  {
+    "rt": 0,
+    "success": true,
+    "msg": "",
+    "list": [
+      {
+        "pictureId": "",
+        "id": 168,
+        "imgPath": "//0.ss.508sys.com/image/rimage/fromSite/default/noimage.jpg",
+        "imgWidth": 0,
+        "imgHeight": 0,
+        "title": "2019年软件编程（C语言）——真题（12月）",
+        "summary": "",
+        "url": "http://www.hunanie.com/nd.jsp?id=168",
+        "ndReqArgs": "{\"args\":{\"id\":168,\"fromMid\":3,\"groupId\":17},\"type\":31}",
+        "flag": 1024,
+        "groupIds": [
+          17
+        ],
+        "date": 1577746380000,
+        "dateStr": "2019-12-31",
+        "top": 0,
+        "views": 105,
+        "publishRegularly": true,
+        "authStatus": 0,
+        "subTitle": "",
+        "groups": [
+          {
+            "id": 17,
+            "name": "真题：软件编程（C语言）",
+            "url": "http://www.hunanie.com/nr.jsp?_reqArgs=%7B%22args%22%3A%7B%22groupId%22%3A17%2C%22jpt%22%3A4%7D%2C%22type%22%3A32%7D"
+          }
+        ]
+      },
+      {
+        "pictureId": "",
+        "id": 89,
+        "imgPath": "//0.ss.508sys.com/image/rimage/fromSite/default/noimage.jpg",
+        "imgWidth": 0,
+        "imgHeight": 0,
+        "title": "全国青少年软件编程等级考试标准 (C语言)",
+        "summary": "全国青少年软件编程等级考试标准（C语言1级-10级）-20190927.pdf",
+        "url": "http://www.hunanie.com/nd.jsp?id=89",
+        "ndReqArgs": "{\"args\":{\"id\":89,\"fromMid\":3,\"groupId\":17},\"type\":31}",
+        "flag": 1024,
+        "groupIds": [
+          17
+        ],
+        "date": 1569591720000,
+        "dateStr": "2019-09-27",
+        "top": 0,
+        "views": 57,
+        "publishRegularly": true,
+        "authStatus": 0,
+        "subTitle": "",
+        "groups": [
+          {
+            "id": 17,
+            "name": "真题：软件编程（C语言）",
+            "url": "http://www.hunanie.com/nr.jsp?_reqArgs=%7B%22args%22%3A%7B%22groupId%22%3A17%2C%22jpt%22%3A4%7D%2C%22type%22%3A32%7D"
+          }
+        ]
+      }
+    ],
+    "total": 22
+  },
+  {
+    "success": true,
+    "list": [
+      {
+        "title": "2024年三维创意设计——（12月理论）",
+        "dateStr": "2024-12-31",
+        "url": "http://www.hunanie.com/nd.jsp?id=262"
+      },
+      {
+        "title": "2024年三维创意设计——（12月实操）",
+        "dateStr": "2024-12-31",
+        "url": "http://www.hunanie.com/nd.jsp?id=261"
+      },
+      {
+        "title": "2024年三维创意设计——（06月）",
+        "dateStr": "2024-08-01",
+        "url": "http://www.hunanie.com/nd.jsp?id=202"
+      },
+      {
+        "title": "2023年三维创意设计——（12月）",
+        "dateStr": "2023-12-29",
+        "url": "http://www.hunanie.com/nd.jsp?id=184"
+      },
+      {
+        "title": "全国青少年三维创意设计等级考试标准",
+        "dateStr": "2018-06-05",
+        "url": "http://www.hunanie.com/nd.jsp?id=91"
+      }
+    ],
+    "source": "HTML_Scrape"
+  },
+  {
+    "success": true,
+    "list": [
+      {
+        "title": "青少年机器人技术等级考试七级内容",
+        "dateStr": "2025-05-27",
+        "url": "http://www.hunanie.com/nd.jsp?id=292"
+      },
+      {
+        "title": "全国青少年电子技术等级考试标准",
+        "dateStr": "2025-05-27",
+        "url": "http://www.hunanie.com/nd.jsp?id=291"
+      },
+      {
+        "title": "全国青少年无人机等级考试大纲与说明",
+        "dateStr": "2025-05-27",
+        "url": "http://www.hunanie.com/nd.jsp?id=290"
+      },
+      {
+        "title": "全国青少年三维创意设计等级考试标准1-6级",
+        "dateStr": "2025-05-27",
+        "url": "http://www.hunanie.com/nd.jsp?id=289"
+      },
+      {
+        "title": "中国电子学会青少年等级考试团体标准",
+        "dateStr": "2025-05-27",
+        "url": "http://www.hunanie.com/nd.jsp?id=288"
+      },
+      {
+        "title": "青少年软件编程（C/C++）等级考试标准 （2025 年修订版）",
+        "dateStr": "2025-05-27",
+        "url": "http://www.hunanie.com/nd.jsp?id=287"
+      },
+      {
+        "title": "全国青少年机器人技术等级考试标准",
+        "dateStr": "2019-12-30",
+        "url": "http://www.hunanie.com/nd.jsp?id=93"
+      },
+      {
+        "title": "全国青少年软件编程等级考试白皮书",
+        "dateStr": "2019-12-27",
+        "url": "http://www.hunanie.com/nd.jsp?id=87"
+      },
+      {
+        "title": "全国青少年机器人技术等级考试项目说明书",
+        "dateStr": "2019-10-30",
+        "url": "http://www.hunanie.com/nd.jsp?id=92"
+      },
+      {
+        "title": "青少年电子信息等级考试标准",
+        "dateStr": "2019-09-01",
+        "url": "http://www.hunanie.com/nd.jsp?id=95"
+      }
+    ],
+    "source": "HTML_Scrape"
+  },
+  {
+    "rt": 0,
+    "success": true,
+    "msg": "",
+    "list": [
+      {
+        "pictureId": "",
+        "id": 86,
+        "imgPath": "//0.ss.508sys.com/image/rimage/fromSite/default/noimage.jpg",
+        "imgWidth": 0,
+        "imgHeight": 0,
+        "title": "中国电子学会青少年等级考试介绍",
+        "summary": "中国电子学会等级考试介绍.pdf",
+        "url": "http://www.hunanie.com/nd.jsp?id=86",
+        "ndReqArgs": "{\"args\":{\"id\":86,\"fromMid\":3,\"groupId\":19},\"type\":31}",
+        "flag": 1024,
+        "groupIds": [
+          19
+        ],
+        "date": 1535808180000,
+        "dateStr": "2018-09-01",
+        "top": 0,
+        "views": 63,
+        "publishRegularly": true,
+        "authStatus": 0,
+        "subTitle": "",
+        "groups": [
+          {
+            "id": 19,
+            "name": "考试标准",
+            "url": "http://www.hunanie.com/nr.jsp?_reqArgs=%7B%22args%22%3A%7B%22groupId%22%3A19%2C%22jpt%22%3A4%7D%2C%22type%22%3A32%7D"
+          }
+        ]
+      },
+      {
+        "pictureId": "",
+        "id": 94,
+        "imgPath": "//0.ss.508sys.com/image/rimage/fromSite/default/noimage.jpg",
+        "imgWidth": 0,
+        "imgHeight": 0,
+        "title": "全国青少年机器人技术等级考试 考试、考务管理办法(试行)",
+        "summary": "全国青少年机器人技术等级考试+考试、考务管理办法.pdf",
+        "url": "http://www.hunanie.com/nd.jsp?id=94",
+        "ndReqArgs": "{\"args\":{\"id\":94,\"fromMid\":3,\"groupId\":19},\"type\":31}",
+        "flag": 1024,
+        "groupIds": [
+          19
+        ],
+        "date": 1530452880000,
+        "dateStr": "2018-07-01",
+        "top": 0,
+        "views": 22,
+        "publishRegularly": true,
+        "authStatus": 0,
+        "subTitle": "",
+        "groups": [
+          {
+            "id": 19,
+            "name": "考试标准",
+            "url": "http://www.hunanie.com/nr.jsp?_reqArgs=%7B%22args%22%3A%7B%22groupId%22%3A19%2C%22jpt%22%3A4%7D%2C%22type%22%3A32%7D"
+          }
+        ]
+      }
+    ],
+    "total": 12
+  },
+  {
+    "success": true,
+    "list": [
+      {
+        "title": "考级-证书团体认领表格",
+        "dateStr": "2025-03-25",
+        "url": "http://www.hunanie.com/nd.jsp?id=276"
+      },
+      {
+        "title": "中国电子学会关于征集青少年等级考试命题专家的通知",
+        "dateStr": "2025-02-25",
+        "url": "http://www.hunanie.com/nd.jsp?id=274"
+      },
+      {
+        "title": "湖南省电子学会再次荣获2024年度中国电子学会“先进集体”“先进工作者”称号",
+        "dateStr": "2024-12-28",
+        "url": "http://www.hunanie.com/nd.jsp?id=260"
+      },
+      {
+        "title": "湖南省电子学会获批为2025全国青少年信息素养大赛”华中赛区（湖南）承办单位",
+        "dateStr": "2024-11-25",
+        "url": "http://www.hunanie.com/nd.jsp?id=267"
+      },
+      {
+        "title": "关于举办“青少年等级考试”师资培训班的通知",
+        "dateStr": "2024-09-24",
+        "url": "http://www.hunanie.com/nd.jsp?id=225"
+      },
+      {
+        "title": "关于组织开展2024年度青少年等级考试服务机构遴选的通知",
+        "dateStr": "2024-08-01",
+        "url": "http://www.hunanie.com/nd.jsp?id=195"
+      },
+      {
+        "title": "2024年湖南省电子学会科普工作会议暨2023年度工作表彰大会",
+        "dateStr": "2024-04-10",
+        "url": "http://www.hunanie.com/nd.jsp?id=52"
+      },
+      {
+        "title": "关于开展湖南省电子学会市级服务中心、 咨询服务站考核评优的通知",
+        "dateStr": "2024-01-26",
+        "url": "http://www.hunanie.com/nd.jsp?id=57"
+      },
+      {
+        "title": "等级考试证书补办及申请国际证书",
+        "dateStr": "2022-07-06",
+        "url": "http://www.hunanie.com/nd.jsp?id=85"
+      },
+      {
+        "title": "关于湖南地区首批青少年等级考试咨询服务站申报通知",
+        "dateStr": "2019-11-04",
+        "url": "http://www.hunanie.com/nd.jsp?id=42"
+      }
+    ],
+    "source": "HTML_Scrape"
+  },
+  {
+    "rt": 0,
+    "success": true,
+    "msg": "",
+    "list": [
+      {
+        "pictureId": "ABUIABACGAAgrp66tAYo7v7TDjDzCTi2Bw",
+        "id": 17,
+        "imgPath": "//32238342.s21i.faiusr.com/2/ABUIABACGAAgrp66tAYo7v7TDjDzCTi2Bw!700x700.jpg",
+        "imgWidth": 1267,
+        "imgHeight": 950,
+        "title": "2018年全国青少年机器人技术等级考试顺利结束",
+        "summary": "12月8日上午9点，由中国电子学会主办，国家教育信息化产业技术创新战略联盟组织的全国青少年机器人技术等级考试（以下简称“等级考试”）2018年统考全国同步开考。湖南省电子学会是全国青少年机器人技术等级考试设定在湖南的唯一一家考试服务中心，在长沙市、株洲市、衡阳市、永州市等地区首次组织等级考试。全国青少年机器人技术等级考试是由中国电子学会于2015年启动的面向青少年机器人技术能力水平的社会化评...",
+        "url": "http://www.hunanie.com/nd.jsp?id=17",
+        "ndReqArgs": "{\"args\":{\"id\":17,\"fromMid\":3,\"groupId\":4},\"type\":31}",
+        "flag": 1024,
+        "groupIds": [
+          4
+        ],
+        "date": 1544448960000,
+        "dateStr": "2018-12-10",
+        "top": 0,
+        "views": 6,
+        "publishRegularly": true,
+        "authStatus": 0,
+        "subTitle": "",
+        "groups": [
+          {
+            "id": 4,
+            "name": "等级考试",
+            "url": "http://www.hunanie.com/nr.jsp?_reqArgs=%7B%22args%22%3A%7B%22groupId%22%3A4%2C%22jpt%22%3A4%7D%2C%22type%22%3A32%7D"
+          }
+        ]
+      },
+      {
+        "pictureId": "",
+        "id": 37,
+        "imgPath": "//0.ss.508sys.com/image/rimage/fromSite/default/noimage.jpg",
+        "imgWidth": 0,
+        "imgHeight": 0,
+        "title": "关于举办2019年全国青少年机器人技术等级考试的通知",
+        "summary": "各有关单位：机器人是国家科技创新的重点领域。发展机器人技术是我国实施“中国制造2025”战略，推动产业升级转型，实现智能社会的重要基础。中国电子学会是工业和信息化直属事业单位、是中国科学技术协会的团体会员单位，是人力资源和社会保障部的国家级专业技术人员继续教育基地，是国家标准化管理委员会的机器人与物联网标准重点研制单位。为推动机器人技术在青少年中的普及，引导青少年学习、应用、发展机器人相关技...",
+        "url": "http://www.hunanie.com/nd.jsp?id=37",
+        "ndReqArgs": "{\"args\":{\"id\":37,\"fromMid\":3,\"groupId\":4},\"type\":31}",
+        "flag": 1024,
+        "groupIds": [
+          4
+        ],
+        "date": 1544234520000,
+        "dateStr": "2018-12-08",
+        "top": 0,
+        "views": 6,
+        "publishRegularly": true,
+        "authStatus": 0,
+        "subTitle": "",
+        "groups": [
+          {
+            "id": 4,
+            "name": "等级考试",
+            "url": "http://www.hunanie.com/nr.jsp?_reqArgs=%7B%22args%22%3A%7B%22groupId%22%3A4%2C%22jpt%22%3A4%7D%2C%22type%22%3A32%7D"
+          }
+        ]
+      }
+    ],
+    "total": 12
+  }
+]
