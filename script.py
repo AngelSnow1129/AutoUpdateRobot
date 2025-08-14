@@ -1,258 +1,234 @@
-import requests
-from bs4 import BeautifulSoup
+import json
 import os
 import time
 import random
-import json
-import logging
-import shutil
-import re
-import sys
-from concurrent.futures import ThreadPoolExecutor, as_completed
-from tqdm import tqdm
+import requests
+from bs4 import BeautifulSoup
+from playwright.sync_api import sync_playwright, TimeoutError as PlaywrightTimeoutError
+from urllib.parse import quote, urljoin
 
-# ==============================================================================
-# --- 日志配置 ---
-# ==============================================================================
-# 确保日志文件和脚本在同一目录下
-log_file_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'download_log.log') if '__file__' in locals() else 'download_log.log'
-logger = logging.getLogger()
-logger.setLevel(logging.INFO)
+# --- 配置 ---
+BASE_URL = "http://www.hunanie.com/nr.jsp"
+SITE_DOMAIN = "http://www.hunanie.com"
+API_ENDPOINT_CONTAINS = "/rajax/news_h.jsp"
+# [修正] 目录名与 a​​ction 保持一致
+DOWNLOAD_DIR = "downloads_final"
+# [新增] 定义历史记录文件名，与 action 保持一致
+PROCESSED_URLS_FILE = "processed_urls.txt"
 
-# 避免在多次导入时重复添加handler
-if not logger.handlers:
-    # 文件处理器
-    file_handler = logging.FileHandler(log_file_path, mode='w', encoding='utf-8')
-    file_handler.setLevel(logging.INFO)
-    # 控制台处理器
-    console_handler = logging.StreamHandler(sys.stdout)
-    console_handler.setLevel(logging.INFO)
-    # 统一格式化
-    formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
-    file_handler.setFormatter(formatter)
-    console_handler.setFormatter(formatter)
-    # 添加到logger
-    logger.addHandler(file_handler)
-    logger.addHandler(console_handler)
-
-# ==============================================================================
-# --- 全局配置 ---
-# ==============================================================================
-HEADERS = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.131 Safari/537.36"}
-HISTORY_URL_FILE = 'processed_urls.txt'
-DOWNLOAD_DIR_TEMP = 'downloads_temp'  # 所有文件先下载到这里
-DOWNLOAD_DIR_CLASSIFIED = 'downloads_final' # 最终分类归档目录
-MAX_THREADS = 5  # 并发下载线程数
-
-# 用于分类的关键字和映射 (关键字建议用小写)
-SUBJECT_KEYWORDS = {
-    "python": "Python",
-    "c语言": "C语言",
-    "图形化": "图形化编程",
-    "机器人": "机器人",
-    "三维创意设计": "三维创意设计",
-    "无人机": "无人机",
-    "电子技术": "电子技术",
+# 完整的分组ID映射关系
+GROUP_ID_MAP = {
+    14: "真题：机器人技术",
+    15: "真题：软件编程（图形化）",
+    16: "真题：软件编程（Python）",
+    17: "真题：软件编程（C语言）",
+    18: "真题：三维创意设计",
+    19: "考试标准",
+    4:  "等级考试",
 }
-CHINESE_NUMERALS = {'一': '1', '二': '2', '三': '3', '四': '4', '五': '5', '六': '6', '七': '7', '八': '8', '九': '9'}
 
-# ==============================================================================
-# --- 核心功能函数 ---
-# ==============================================================================
+# 存储所有捕获到的数据（包括HTML抓取和API响应）
+all_data_container = []
 
-def get_urls_from_sources():
-    """从所有已知来源获取URL列表"""
-    logger.info("开始从所有来源获取URL...")
-    urls_from_robot = get_urls_from_robot()
-    # 在这里可以添加其他获取URL的函数
-    # urls_from_other_source = get_urls_from_other_source()
-    all_urls = set(urls_from_robot) # | set(urls_from_other_source)
-    logger.info(f"所有来源共找到 {len(all_urls)} 个不重复的详情页URL。")
-    return list(all_urls)
-
-def get_urls_from_robot():
-    """从主页面的文章列表中提取所有详情页URL"""
-    try:
-        url = "http://www.hunanie.com/col.jsp?id=123"
-        response = requests.get(url, headers=HEADERS, timeout=30)
-        response.raise_for_status()
-        soup = BeautifulSoup(response.text, 'html.parser')
-        # 查找所有包含 nd.jsp 的链接
-        urls = [link['href'] for link in soup.find_all('a', href=True) if "http://www.hunanie.com/nd.jsp" in link.get('href', '')]
-        logger.info(f"成功从robot页面提取{len(set(urls))}个URL")
-        return urls
-    except requests.RequestException as e:
-        logger.error(f"提取robot页面URL时出错: {e}")
-        return []
-
-def load_processed_urls():
-    """加载已处理过的URL历史记录"""
-    if not os.path.exists(HISTORY_URL_FILE):
+# --- [新增] 历史记录处理函数 ---
+def load_processed_urls(filename):
+    """从文件加载已处理的URL集合"""
+    if not os.path.exists(filename):
         return set()
-    try:
-        with open(HISTORY_URL_FILE, 'r', encoding='utf-8') as f:
-            return {line.strip() for line in f if line.strip()}
-    except Exception as e:
-        logger.error(f"加载历史文件失败: {e}")
-        return set()
+    with open(filename, 'r', encoding='utf-8') as f:
+        # 确保读取时去除空行和多余空格
+        return set(line.strip() for line in f if line.strip())
 
-def save_processed_urls(urls_set):
-    """保存更新后的URL历史记录"""
-    try:
-        with open(HISTORY_URL_FILE, 'w', encoding='utf-8') as f:
-            for url in sorted(list(urls_set)):
-                f.write(url + '\n')
-    except Exception as e:
-        logger.error(f"保存历史文件失败: {e}")
+def save_processed_urls(filename, urls):
+    """将已处理的URL集合保存到文件"""
+    with open(filename, 'w', encoding='utf-8') as f:
+        for url in sorted(list(urls)):
+            f.write(url + '\n')
 
+def generate_category_urls(base_url, id_map):
+    """根据分组ID生成所有分类页面的起始URL"""
+    urls = {}
+    for group_id, name in id_map.items():
+        req_args = {"args": {"groupId": group_id, "jpt": 4}, "type": 32}
+        encoded_args = quote(json.dumps(req_args, separators=(',', ':')))
+        urls[name] = f"{base_url}?_reqArgs={encoded_args}"
+    return urls
 
-def get_all_download_tasks(url_list):
-    """
-    (步骤1) 顺序遍历所有详情页，收集所有需要下载的文件信息（URL和目标路径）。
-    返回一个任务列表，每个任务是 (下载链接, 保存路径, 文件名) 的元组。
-    """
-    tasks = []
-    if not url_list:
-        return tasks
-        
-    if not os.path.exists(DOWNLOAD_DIR_TEMP):
-        os.makedirs(DOWNLOAD_DIR_TEMP)
-    
-    for url in tqdm(url_list, desc="步骤 1/3 - 正在解析详情页面"):
+def handle_response(response):
+    """Playwright的网络响应处理器，用于捕获第2页及以后的JSON数据"""
+    if API_ENDPOINT_CONTAINS in response.url and response.ok:
         try:
-            response = requests.get(url, headers=HEADERS, timeout=30)
-            if response.status_code == 200:
-                soup = BeautifulSoup(response.text, 'html.parser')
-                download_elements = soup.select('a.news_detail_download_item_link')
+            print(f"[*] 成功捕获API响应 (分页数据): {response.url}")
+            data = response.json()
+            all_data_container.append(data)
+        except Exception as e:
+            print(f"[!] 解析JSON响应失败: {e}")
+
+def scrape_initial_page_data(page):
+    """[优化] 直接从HTML中解析第一页的文章列表"""
+    print("  -> 正在从HTML中直接解析第一页的数据...")
+    articles = []
+    try:
+        page.wait_for_selector('.news_result_item_line', timeout=10000)
+        entries = page.locator('.news_result_item_line').all()
+        
+        for entry in entries:
+            title_loc = entry.locator('.news_result_item_title')
+            date_loc = entry.locator('.news_result_item_date')
+            link_loc = entry.locator('a.news_result_item_link')
+            
+            title = title_loc.inner_text().strip() if title_loc.count() > 0 else ""
+            date_str = date_loc.inner_text().strip() if date_loc.count() > 0 else ""
+            relative_url = link_loc.get_attribute('href') if link_loc.count() > 0 else ""
+
+            if title and relative_url:
+                # [优化] 将相对URL转换为绝对URL
+                absolute_url = urljoin(SITE_DOMAIN, relative_url)
+                articles.append({
+                    "title": title,
+                    "dateStr": date_str,
+                    "url": absolute_url
+                })
+        
+        print(f"    -> 成功解析到 {len(articles)} 篇文章。")
+        
+        if articles:
+            # 模仿API响应的结构，以便后续统一处理
+            return {"success": True, "list": articles, "source": "HTML_Scrape"}
+            
+    except PlaywrightTimeoutError:
+        print("  -> 在初始页面未找到文章列表。")
+    except Exception as e:
+        print(f"  -> 解析初始页面时出错: {e}")
+    return None
+
+def collect_data_with_playwright(category_urls):
+    """步骤1: 使用Playwright遍历所有分类，抓取数据"""
+    with sync_playwright() as p:
+        browser = p.chromium.launch(headless=True)
+        context = browser.new_context(user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36")
+        page = context.new_page()
+        
+        page.on("response", handle_response)
+
+        for category_name, url in category_urls.items():
+            print(f"\n{'='*20}\n正在处理分类: {category_name}\n{'='*20}")
+            try:
+                page.goto(url, wait_until='networkidle', timeout=60000)
+                
+                initial_data = scrape_initial_page_data(page)
+                if initial_data:
+                    all_data_container.append(initial_data)
+
+                page_num = 1
+                while True:
+                    next_button = page.locator('.pagination_btn_next')
+                    
+                    if not next_button.is_visible() or next_button.is_disabled():
+                        print(f"分类 '{category_name}' 已到达最后一页。")
+                        break
+                    
+                    page_num += 1
+                    print(f"  -> 正在点击加载第 {page_num} 页...")
+                    next_button.click()
+                    page.wait_for_load_state('networkidle', timeout=30000)
+                    time.sleep(random.uniform(2, 4))
+
+            except Exception as e:
+                print(f"处理分类 '{category_name}' 时发生错误: {e}")
+        
+        browser.close()
+
+def parse_and_download(data_list, processed_urls):
+    """步骤2: 解析数据，过滤已处理的URL，并下载新文件"""
+    new_urls_to_process = set()
+    print("\n--- 正在从所有数据中解析文章详情页URL ---")
+    for data in data_list:
+        article_list = data.get('list') or data.get('data', {}).get('newsList', [])
+        for article in article_list:
+            if article.get('url'):
+                full_url = article['url']
+                # [核心逻辑] 如果URL未被处理过，则加入待处理集合
+                if full_url not in processed_urls:
+                    new_urls_to_process.add(full_url)
+    
+    total_found = len(new_urls_to_process) + len(processed_urls)
+    print(f"解析完成，共找到 {total_found} 个不重复的文章页面。")
+    print(f"历史记录中已有 {len(processed_urls)} 个，本次新增 {len(new_urls_to_process)} 个待处理页面。")
+
+    if not new_urls_to_process:
+        print("没有新的文章页面需要处理。")
+        return processed_urls
+
+    # [优化] 确保目录存在
+    os.makedirs(DOWNLOAD_DIR, exist_ok=True)
+    
+    print(f"\n--- 开始从 {len(new_urls_to_process)} 个新页面中批量下载文件 ---")
+    newly_processed_urls = set()
+    for i, url in enumerate(sorted(list(new_urls_to_process))):
+        print(f"\n处理新页面 {i+1}/{len(new_urls_to_process)}: {url}")
+        try:
+            response = requests.get(url, headers={'User-Agent': 'Mozilla/5.0'}, timeout=20)
+            response.raise_for_status()
+            soup = BeautifulSoup(response.text, 'html.parser')
+            download_elements = soup.select('a.news_detail_download_item_link')
+            
+            if not download_elements:
+                print("  -> 未找到下载链接。")
+            else:
                 for element in download_elements:
                     link = element.get('href')
                     name_tag = element.select_one('span.news_detail_download_item_text')
                     if not link or not name_tag:
                         continue
                     
-                    # 清理文件名中的非法字符
-                    file_name = name_tag.text.strip().replace('\r', '').replace('\n', '')
-                    safe_file_name = re.sub(r'[\\/*?:"<>|]', "", file_name)
-                    file_path = os.path.join(DOWNLOAD_DIR_TEMP, safe_file_name)
-                    
-                    # 检查文件是否已存在于临时目录或最终目录（防止重复下载）
-                    if os.path.exists(file_path) or check_if_file_exists_in_final_dir(safe_file_name):
+                    file_name = name_tag.text.strip().replace("/", "-") # 替换非法字符
+                    file_path = os.path.join(DOWNLOAD_DIR, file_name)
+
+                    if os.path.exists(file_path):
+                        print(f"  -> 文件已存在, 跳过: {file_name}")
                         continue
                     
-                    if not link.startswith('http'):
-                        link = 'http:' + link
-                    tasks.append((link, file_path, safe_file_name))
-            time.sleep(random.uniform(0.5, 1.5)) # 解析页面间也需要延时
+                    download_url = urljoin(SITE_DOMAIN, link)
+                    
+                    print(f"  -> 正在下载: {file_name}")
+                    file_response = requests.get(download_url, timeout=90, stream=True)
+                    file_response.raise_for_status()
+                    with open(file_path, 'wb') as f:
+                        for chunk in file_response.iter_content(chunk_size=8192):
+                            f.write(chunk)
+                    print(f"    下载成功!")
+                    time.sleep(random.uniform(1, 2))
+
+            # 无论页面有无附件，只要成功访问，就标记为已处理
+            newly_processed_urls.add(url)
+            
         except requests.RequestException as e:
-            logger.error(f"访问详情页失败 {url}: {e}")
-    return tasks
+            print(f"  下载页面或文件时出错: {e}")
+        except Exception as e:
+            print(f"  处理页面时发生未知错误: {e}")
 
-def check_if_file_exists_in_final_dir(filename):
-    """检查文件是否已存在于最终分类目录的任何子文件夹中"""
-    if not os.path.exists(DOWNLOAD_DIR_CLASSIFIED):
-        return False
-    for root, _, files in os.walk(DOWNLOAD_DIR_CLASSIFIED):
-        if filename in files:
-            return True
-    return False
-
-def download_single_file(url, path, filename):
-    """下载单个文件的函数，供线程池调用"""
-    try:
-        response = requests.get(url, timeout=120, stream=True)
-        response.raise_for_status()
-        with open(path, 'wb') as f:
-            for chunk in response.iter_content(chunk_size=8192):
-                f.write(chunk)
-        return f"成功: {filename}"
-    except Exception as e:
-        return f"失败: {filename} - {str(e)}"
-
-def concurrent_downloader(tasks):
-    """(步骤2) 使用线程池并发下载所有文件"""
-    if not tasks:
-        logger.info("没有新的文件需要下载。")
-        return
-        
-    logger.info(f"发现 {len(tasks)} 个新文件，开始 {MAX_THREADS} 线程并发下载...")
-    with ThreadPoolExecutor(max_workers=MAX_THREADS) as executor:
-        futures = [executor.submit(download_single_file, url, path, filename) for url, path, filename in tasks]
-        # 使用tqdm创建进度条
-        pbar = tqdm(as_completed(futures), total=len(tasks), desc="步骤 2/3 - 正在下载文件")
-        for future in pbar:
-            result = future.result()
-            if "失败" in result:
-                # 记录失败日志，但不显示在进度条上
-                logger.warning(result)
-
-def classify_downloaded_files():
-    """(步骤3) 遍历临时目录，将文件按 学科/等级 分类到最终目录"""
-    logger.info("\n========== 步骤 3/3 - 开始执行文件分类任务 ==========")
-    if not os.path.exists(DOWNLOAD_DIR_TEMP):
-        logger.info("临时下载目录不存在，无需分类。")
-        return
-
-    files_to_classify = [f for f in os.listdir(DOWNLOAD_DIR_TEMP) if os.path.isfile(os.path.join(DOWNLOAD_DIR_TEMP, f))]
-    if not files_to_classify:
-        logger.info("临时文件夹为空，无需分类。")
-        try: os.rmdir(DOWNLOAD_DIR_TEMP)
-        except OSError: pass # 如果目录非空（比如有隐藏文件），则忽略
-        return
-        
-    for filename in tqdm(files_to_classify, desc="步骤 3/3 - 正在分类文件"):
-        source_path = os.path.join(DOWNLOAD_DIR_TEMP, filename)
-        subject, level = "未分类", "未分类"
-
-        for keyword, sub_name in SUBJECT_KEYWORDS.items():
-            if keyword in filename.lower():
-                subject = sub_name
-                break
-        
-        level_match = re.search(r'([一二三四五六七八九\d]+)级', filename)
-        if level_match:
-            level_str = level_match.group(1)
-            level = f"{CHINESE_NUMERALS.get(level_str, level_str)}级"
-        
-        target_dir = os.path.join(DOWNLOAD_DIR_CLASSIFIED, subject, level)
-        if not os.path.exists(target_dir):
-            os.makedirs(target_dir)
-        
-        target_path = os.path.join(target_dir, filename)
-        shutil.move(source_path, target_path)
-    
-    logger.info("分类完成！")
-    try:
-        if not os.listdir(DOWNLOAD_DIR_TEMP):
-            os.rmdir(DOWNLOAD_DIR_TEMP)
-            logger.info(f"已清理空的临时目录: {DOWNLOAD_DIR_TEMP}")
-    except Exception as e:
-        logger.error(f"清理临时目录失败: {e}")
-
-def main_job():
-    """主任务流程，协调所有操作"""
-    logger.info("========== 脚本开始执行 ==========")
-    processed_urls = load_processed_urls()
-    logger.info(f"已加载 {len(processed_urls)} 条历史URL记录。")
-
-    all_found_urls = get_urls_from_sources()
-    new_urls_to_process = list(set(all_found_urls) - processed_urls)
-    logger.info(f"本次运行发现 {len(new_urls_to_process)} 个新的详情页需要处理。")
-
-    download_tasks = get_all_download_tasks(new_urls_to_process)
-    concurrent_downloader(download_tasks)
-    classify_downloaded_files()
-    
-    updated_processed_urls = processed_urls.union(new_urls_to_process)
-    if len(updated_processed_urls) > len(processed_urls):
-        save_processed_urls(updated_processed_urls)
-        logger.info(f"URL历史记录已更新，总计 {len(updated_processed_urls)} 条。")
-
-    logger.info("========== 所有任务执行完毕 ==========")
+    # 返回旧记录和新记录的并集
+    return processed_urls.union(newly_processed_urls)
 
 if __name__ == "__main__":
-    try:
-        main_job()
-    except KeyboardInterrupt:
-        logger.info("脚本被用户手动中断。")
-    except Exception as e:
-        logger.error(f"脚本顶层运行时捕获到意外错误: {e}", exc_info=True)
+    # [新增] 加载历史记录
+    processed_urls_history = load_processed_urls(PROCESSED_URLS_FILE)
+    
+    category_links = generate_category_urls(BASE_URL, GROUP_ID_MAP)
+    
+    collect_data_with_playwright(category_links)
+    
+    if all_data_container:
+        with open("captured_all_data.json", "w", encoding="utf-8") as f:
+            json.dump(all_data_container, f, ensure_ascii=False, indent=2)
+        print(f"\n所有 {len(all_data_container)} 份数据已备份到 captured_all_data.json")
+    
+    updated_processed_urls = parse_and_download(all_data_container, processed_urls_history)
+    
+    # [新增] 如果有新处理的URL，则保存更新后的历史记录
+    if len(updated_processed_urls) > len(processed_urls_history):
+        print(f"\n更新URL历史记录文件: {PROCESSED_URLS_FILE}")
+        save_processed_urls(PROCESSED_URLS_FILE, updated_processed_urls)
+    
+    print("\n所有任务已完成。")
